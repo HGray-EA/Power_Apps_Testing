@@ -1,5 +1,0 @@
-{
-  "objectId": "",
-  "type": 4,
-  "explorationState": "{\"version\":\"1.8\",\"activeSection\":\"\",\"sections\":{\"ReportSection\":{\"visualContainers\":{\"36086627644d34f348e3\":{\"singleVisual\":{\"visualType\":\"textbox\",\"mobileObjects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"WFD Status Classifications & Description\",\"textStyle\":{},\"url\":\"https://environment.data.gov.uk/catchment-planning/help/usage\"}]}]}}]}}}}},\"ReportSectionb0542dbbb4525ee975c0\":{\"visualContainers\":{\"e46565f801994d120685\":{\"singleVisual\":{\"visualType\":\"lineChart\",\"mobileObjects\":{\"categoryAxis\":[{\"properties\":{\"start\":{\"expr\":{\"Literal\":{\"Value\":\"2009D\"}}},\"end\":{\"expr\":{\"Literal\":{\"Value\":\"2022D\"}}}}}]}}}}}}}"
-}
