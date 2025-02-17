@@ -1,0 +1,317 @@
+table WFD_Wessex
+	lineageTag: cfca852d-0b7b-4cb0-a9e4-0b998449405f
+
+	column Column1
+		dataType: int64
+		formatString: 0
+		lineageTag: 10aaa084-1ce0-4617-bbc7-de3dfd8118fc
+		summarizeBy: sum
+		sourceColumn: Column1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'X.2'
+		dataType: int64
+		formatString: 0
+		lineageTag: f0024c33-411c-4aca-bebc-34781d4311df
+		summarizeBy: sum
+		sourceColumn: X.2
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'X.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4df3e064-0b74-4769-bcf1-5da2523d1a0c
+		summarizeBy: sum
+		sourceColumn: X.1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column X
+		dataType: int64
+		formatString: 0
+		lineageTag: 61d742cd-03e1-4945-88cd-7240029fb3bc
+		summarizeBy: sum
+		sourceColumn: X
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'River.Basin.District'
+		dataType: string
+		lineageTag: 1b24f5ce-9aae-4072-a85c-287a05b81184
+		summarizeBy: none
+		sourceColumn: River.Basin.District
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Management.Catchment'
+		dataType: string
+		lineageTag: 6063d17b-e82d-43a9-92b7-d9091a4281ca
+		summarizeBy: none
+		sourceColumn: Management.Catchment
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Operational.Catchment'
+		dataType: string
+		lineageTag: 48d44d72-5d51-4bce-a279-bf266442dc5a
+		summarizeBy: none
+		sourceColumn: Operational.Catchment
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Water.Body.ID'
+		dataType: string
+		lineageTag: 672a4e61-5688-40c9-abd1-ab68d4b29ad6
+		summarizeBy: none
+		sourceColumn: Water.Body.ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Water.Body'
+		dataType: string
+		lineageTag: ae744599-9810-492a-8cc0-503772964ccd
+		summarizeBy: none
+		sourceColumn: Water.Body
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Water.Body.Type'
+		dataType: string
+		lineageTag: 07fc71b8-aef1-44d9-94c1-370b86542fe9
+		summarizeBy: none
+		sourceColumn: Water.Body.Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Easting
+		dataType: int64
+		formatString: 0
+		lineageTag: a64d4b5b-1951-4c5d-907e-cc9ac8387e88
+		summarizeBy: sum
+		sourceColumn: Easting
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Northing
+		dataType: int64
+		formatString: 0
+		lineageTag: 77a770e7-d51a-4367-8f6a-9b29eccd7d3e
+		summarizeBy: sum
+		sourceColumn: Northing
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ngr
+		dataType: string
+		lineageTag: e279bcc3-63f8-4db4-abe6-a98daed76bf2
+		summarizeBy: none
+		sourceColumn: Ngr
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hydromorphological.designation'
+		dataType: string
+		lineageTag: 1987c2c6-5f4a-4f7a-a4ec-4efba6085233
+		summarizeBy: none
+		sourceColumn: Hydromorphological.designation
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 9a475612-5163-4e2d-9896-93dcb5674d7c
+		summarizeBy: none
+		sourceColumn: Year
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: b99c0358-bca6-4e40-92c9-3bb16c29f256
+		summarizeBy: none
+		sourceColumn: Status
+
+		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status.Sort'
+		dataType: string
+		lineageTag: fe7a85bc-f183-41e1-a2d2-e7badbd05c03
+		summarizeBy: none
+		sourceColumn: Status.Sort
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cycle
+		dataType: int64
+		formatString: 0
+		lineageTag: 5e61f3c3-0354-4a57-9f10-e4437fa9b88c
+		summarizeBy: sum
+		sourceColumn: Cycle
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Classification.Level'
+		dataType: string
+		lineageTag: ff7b719c-75a1-4694-8f92-d834788277be
+		summarizeBy: none
+		sourceColumn: Classification.Level
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Classification.Item'
+		dataType: string
+		lineageTag: 1cadf75e-1e67-40bf-8fa3-1eef0c4d4246
+		summarizeBy: none
+		sourceColumn: Classification.Item
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Classification.ID'
+		dataType: string
+		lineageTag: 6b3b3dce-a20a-4c43-8bd2-47971224fabb
+		summarizeBy: none
+		sourceColumn: Classification.ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Certainty
+		dataType: string
+		lineageTag: 964c7bb7-b0f5-4c2e-9db7-7db857e01644
+		summarizeBy: none
+		sourceColumn: Certainty
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Confidence
+		dataType: string
+		lineageTag: ca4e43dc-b4ef-40f6-a002-b7d66b82bca9
+		summarizeBy: none
+		sourceColumn: Confidence
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Deterioration.Type'
+		dataType: string
+		lineageTag: d03251e9-3b75-4a6d-9ed8-7633b53f9ee8
+		summarizeBy: none
+		sourceColumn: Deterioration.Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Linked.Reasons'
+		dataType: string
+		lineageTag: 58df0b2f-69ef-4db1-928a-3e96a74206e7
+		summarizeBy: none
+		sourceColumn: Linked.Reasons
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Investigation.Outcome'
+		dataType: string
+		lineageTag: 3a8920e1-4d47-4f50-bcf9-438dbd66c451
+		summarizeBy: none
+		sourceColumn: Investigation.Outcome
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Classification Item Subgroup'
+		dataType: string
+		lineageTag: 9f9ff790-50c7-4b11-a702-7a361de9dadd
+		summarizeBy: none
+		sourceColumn: Classification Item Subgroup
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Classification Item Categories'
+		dataType: string
+		lineageTag: 76a858c6-3b3e-4919-9e28-4d27e19d6dd5
+		summarizeBy: none
+		sourceColumn: Classification Item Categories
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Broad_Categories
+		dataType: string
+		lineageTag: 6bf917fb-431a-4365-93c1-3c40cae39406
+		summarizeBy: none
+		sourceColumn: Broad_Categories
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition WFD_Wessex = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\hg000051\OneDrive - Defra\Projects\WFD Data\WFD_Wessex.csv"),[Delimiter=",", Columns=29, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"", Int64.Type}, {"X.2", Int64.Type}, {"X.1", Int64.Type}, {"X", Int64.Type}, {"River.Basin.District", type text}, {"Management.Catchment", type text}, {"Operational.Catchment", type text}, {"Water.Body.ID", type text}, {"Water.Body", type text}, {"Water.Body.Type", type text}, {"Easting", Int64.Type}, {"Northing", Int64.Type}, {"Ngr", type text}, {"Hydromorphological.designation", type text}, {"Year", Int64.Type}, {"Status", type text}, {"Status.Sort", type text}, {"Cycle", Int64.Type}, {"Classification.Level", type text}, {"Classification.Item", type text}, {"Classification.ID", type text}, {"Certainty", type text}, {"Confidence", type text}, {"Deterioration.Type", type text}, {"Linked.Reasons", type text}, {"Investigation.Outcome", type text}, {"Classification Item Subgroup", type text}, {"Classification Item Categories", type text}, {"Broad_Categories", type text}})
+				in
+				    #"Changed Type"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

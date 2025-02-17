@@ -1,0 +1,573 @@
+table 'Wessex RNAGs (2)'
+	lineageTag: 21a56a77-bd84-4a09-aaf7-6aec6dd9e05f
+
+	column WATERBODY_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: a1a2cf42-7453-4196-9f73-1721d1e8e7c3
+		summarizeBy: count
+		sourceColumn: WATERBODY_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column WATERBODY_ID
+		dataType: string
+		lineageTag: 54f85b87-698e-4b66-9bca-ae406825a17c
+		summarizeBy: none
+		sourceColumn: WATERBODY_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column VERSION
+		dataType: int64
+		formatString: 0
+		lineageTag: 9a4bac92-bb2f-444f-99f2-500e646eea28
+		summarizeBy: sum
+		sourceColumn: VERSION
+
+		annotation SummarizationSetBy = Automatic
+
+	column CYCLE_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: 1464e690-8254-4a79-a3c0-97b2e5aa4b41
+		summarizeBy: count
+		sourceColumn: CYCLE_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PERIOD_NAME
+		dataType: string
+		lineageTag: 5b606ce1-ec72-42e5-b52d-97ce0e7697ca
+		summarizeBy: none
+		sourceColumn: PERIOD_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column EARLIEST_CLASSIFICATION_YEAR
+		dataType: int64
+		formatString: 0
+		lineageTag: 669863ae-ef15-44ab-8a11-9dea371502da
+		summarizeBy: sum
+		sourceColumn: EARLIEST_CLASSIFICATION_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column RFF_INSTANCE_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: 3b45cfa4-61e2-4c2b-ab06-66595fce84cd
+		summarizeBy: count
+		sourceColumn: RFF_INSTANCE_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column RFF_TYPE_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: 982f8583-560b-44ab-958d-c2f839d77a78
+		summarizeBy: count
+		sourceColumn: RFF_TYPE_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column RFF_TYPE
+		dataType: string
+		lineageTag: 2e8cebb0-0b51-4d67-8220-97c6472e5884
+		summarizeBy: none
+		sourceColumn: RFF_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREATED_DATE
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a1a36b58-5379-447e-b635-39ab524c7447
+		summarizeBy: none
+		sourceColumn: CREATED_DATE
+
+		variation Variation
+			isDefault
+			relationship: c6a027ce-bbae-43f1-98fd-2494b59f55b0
+			defaultHierarchy: LocalDateTable_c9dd9cc8-5260-48bd-b2f5-f07c2be28d5e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column BASELINE_DECISION_CODE_ID
+		dataType: string
+		lineageTag: 92d2afa8-7db4-474c-9ec7-96b7ad42fbc6
+		summarizeBy: none
+		sourceColumn: BASELINE_DECISION_CODE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column EXTERNAL_RFF_ID
+		dataType: string
+		lineageTag: b8dadc83-b6b1-4eb8-b934-8c34ba71e18e
+		summarizeBy: none
+		sourceColumn: EXTERNAL_RFF_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column RFF_STATUS
+		dataType: int64
+		formatString: 0
+		lineageTag: 69e25a05-735e-44c8-91b8-53ea81268310
+		summarizeBy: sum
+		sourceColumn: RFF_STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column HAS_COMMENTS
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c8fbe59a-ccb0-43e3-a202-9b28642358ed
+		summarizeBy: none
+		sourceColumn: HAS_COMMENTS
+
+		annotation SummarizationSetBy = Automatic
+
+	column ENTITY_CLASSIFICATION_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: a5ebab9f-68de-4d3b-94a9-3255bca3979f
+		summarizeBy: count
+		sourceColumn: ENTITY_CLASSIFICATION_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column STATPOT_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: c86b01e5-9b78-488b-b714-3a6d0e2016aa
+		summarizeBy: count
+		sourceColumn: STATPOT_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column STATPOT_NAME
+		dataType: string
+		lineageTag: 8abdc33d-7ea6-461a-9234-a3f5c534a6c2
+		summarizeBy: none
+		sourceColumn: STATPOT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLASSIFICATION_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: 7c0b125d-14d1-4629-be72-75bf411655ab
+		summarizeBy: count
+		sourceColumn: CLASSIFICATION_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLASSIFICATION_NAME
+		dataType: string
+		lineageTag: 52e8f7e3-4bdc-4aa1-945f-7aeaed40c3b8
+		summarizeBy: none
+		sourceColumn: CLASSIFICATION_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLASS_ITEM_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: 51d1a985-f9d9-4d23-bcf0-cfc5bc7ae7dd
+		summarizeBy: count
+		sourceColumn: CLASS_ITEM_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLASS_ITEM_NAME
+		dataType: string
+		lineageTag: d6056f90-77ed-4190-8694-2950a916b340
+		summarizeBy: none
+		sourceColumn: CLASS_ITEM_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRESSURE_1_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: 4bdc74f7-a3e7-4ef7-ba05-ead00acabadb
+		summarizeBy: count
+		sourceColumn: PRESSURE_1_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRESSURE_NAME_1
+		dataType: string
+		lineageTag: 453cf391-3fb0-44b5-8897-54ffd482881f
+		summarizeBy: none
+		sourceColumn: PRESSURE_NAME_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRESSURE_2_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: 3bdaa3d9-b137-4bc4-a24d-faad142e8ae2
+		summarizeBy: count
+		sourceColumn: PRESSURE_2_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRESSURE_NAME_2
+		dataType: string
+		lineageTag: dd9a5d18-9225-429c-b378-c22bcf1cccdc
+		summarizeBy: none
+		sourceColumn: PRESSURE_NAME_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROBLEM_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: 90068568-30be-4a95-8624-bf074fd0ae2e
+		summarizeBy: count
+		sourceColumn: PROBLEM_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column EXTERNAL_PROBLEM_ID
+		dataType: string
+		lineageTag: 9b8cd717-d2a5-4c5d-b4f3-304f381cade5
+		summarizeBy: none
+		sourceColumn: EXTERNAL_PROBLEM_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROBLEM_STATUS_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: 254624ab-4320-40dc-b53a-5ac82ec1573a
+		summarizeBy: count
+		sourceColumn: PROBLEM_STATUS_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column StatusText
+		dataType: string
+		lineageTag: 49e5d05f-f89a-4a05-a57c-f96205c59ecb
+		summarizeBy: none
+		sourceColumn: StatusText
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROBLEM_VALID_STATUS_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: 927d2834-e59d-4f4c-8165-b0ea0f066de0
+		summarizeBy: count
+		sourceColumn: PROBLEM_VALID_STATUS_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROBLEM_VALID_STATUS_NAME
+		dataType: string
+		lineageTag: 7c815e3a-1c7a-480c-b997-3c5b8b25934c
+		summarizeBy: none
+		sourceColumn: PROBLEM_VALID_STATUS_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column SWMI_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: d62c5b9d-1b04-41ef-b509-346966548122
+		summarizeBy: count
+		sourceColumn: SWMI_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SWMI_NAME
+		dataType: string
+		lineageTag: 0323baff-249e-47be-8ed7-349801048663
+		summarizeBy: none
+		sourceColumn: SWMI_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column SWMI_CERTAINTY_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: 1c75ba3e-afc3-4c00-a44b-58693ac733e7
+		summarizeBy: count
+		sourceColumn: SWMI_CERTAINTY_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SWMI_CERTAINTY_NAME
+		dataType: string
+		lineageTag: 6abf0d38-12e6-430d-a1d3-d80c573133da
+		summarizeBy: none
+		sourceColumn: SWMI_CERTAINTY_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column RFF_Action_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: 65ff6245-60cd-4ffc-84f8-2c2c7a1b8732
+		summarizeBy: count
+		sourceColumn: RFF_Action_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column RFF_ACTION_NAME
+		dataType: string
+		lineageTag: 3121d2bf-4eba-494b-83e9-5edaa2949942
+		summarizeBy: none
+		sourceColumn: RFF_ACTION_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACTIVITY_CERTAINTY_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: 6ec12ab7-5b68-4ec9-afdf-b059df4085bc
+		summarizeBy: count
+		sourceColumn: ACTIVITY_CERTAINTY_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACTION_CERTAINTY_NAME
+		dataType: string
+		lineageTag: ed57d0ba-0c96-438c-bbd6-3a0595d9d4bf
+		summarizeBy: none
+		sourceColumn: ACTION_CERTAINTY_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: 51fb12a3-0a80-49de-9a49-921e7a32a6b9
+		summarizeBy: count
+		sourceColumn: Category_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column BUSINESS_CATEGORY_NAME
+		dataType: string
+		lineageTag: fcd0e8d1-e1fc-491b-9fb9-0a946254b7c5
+		summarizeBy: none
+		sourceColumn: BUSINESS_CATEGORY_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column BUSINESS_CATEGORY_CERTAINTY_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: 67abb8ae-ec5f-46bc-9f74-270f74ada9e7
+		summarizeBy: count
+		sourceColumn: BUSINESS_CATEGORY_CERTAINTY_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column BUSINESS_CATEGORY_CERTAINTY_NAME
+		dataType: string
+		lineageTag: 196d4fe2-bcd7-43d9-bfed-bd6dd5c540b5
+		summarizeBy: none
+		sourceColumn: BUSINESS_CATEGORY_CERTAINTY_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sector_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: cd13122a-f77f-486d-b017-388e64260f1f
+		summarizeBy: count
+		sourceColumn: Sector_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column BUSINESS_SECTOR_NAME
+		dataType: string
+		lineageTag: c7374e57-93eb-46de-8117-94bb65814b2a
+		summarizeBy: none
+		sourceColumn: BUSINESS_SECTOR_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column TYPE_1_INVESTIGATION_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: 2754e853-1ea0-45bc-adca-c862fe7f5522
+		summarizeBy: count
+		sourceColumn: TYPE_1_INVESTIGATION_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column TYPE_1_OUTCOME_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: 9a381818-2aa4-42ed-b7f0-a44b4c3af1e4
+		summarizeBy: count
+		sourceColumn: TYPE_1_OUTCOME_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column TYPE_1_OUTCOME_NAME
+		dataType: string
+		lineageTag: 7e2c5009-cd7d-4910-9d54-ee2a5fff5e64
+		summarizeBy: none
+		sourceColumn: TYPE_1_OUTCOME_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column TYPE_2_INVESTIGATION_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: 6f4aa66e-6c15-4918-9ff3-01addfbf807b
+		summarizeBy: count
+		sourceColumn: TYPE_2_INVESTIGATION_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column TYPE_2_OUTCOME_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: c1d186a6-5dca-4ef9-955c-7fb76488a17b
+		summarizeBy: count
+		sourceColumn: TYPE_2_OUTCOME_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column TYPE_2_OUTCOME_NAME
+		dataType: string
+		lineageTag: 176ea7e2-ff23-4258-8608-c31e1efb81e9
+		summarizeBy: none
+		sourceColumn: TYPE_2_OUTCOME_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column TYPE_3_INVESTIGATION_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: 51c0ba1c-49af-4f3a-86b8-42ff2c3ace88
+		summarizeBy: count
+		sourceColumn: TYPE_3_INVESTIGATION_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column TYPE_3_OUTCOME_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: c0270f0d-4989-4ec8-b7fd-f874b22d6901
+		summarizeBy: count
+		sourceColumn: TYPE_3_OUTCOME_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column TYPE_3_OUTCOME_NAME
+		dataType: string
+		lineageTag: f5cbf387-657e-4b97-bd85-ab0b816fab7e
+		summarizeBy: none
+		sourceColumn: TYPE_3_OUTCOME_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column SOURCE_APPORTIONMENT_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: 52eebcb0-6428-4c20-a6fb-827fae549595
+		summarizeBy: count
+		sourceColumn: SOURCE_APPORTIONMENT_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SOURCE_APPORTIONMENT_NAME
+		dataType: string
+		lineageTag: 7c37cddc-bb38-4779-9f0a-522101156527
+		summarizeBy: none
+		sourceColumn: SOURCE_APPORTIONMENT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBs_Wessex.ID'
+		dataType: string
+		lineageTag: 0a1d0e01-b120-4075-9786-003dce09cbad
+		summarizeBy: none
+		sourceColumn: WBs_Wessex.ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBs_Wessex.Name'
+		dataType: string
+		lineageTag: 33e6759d-7e62-49aa-8876-1f80d789d2f6
+		summarizeBy: none
+		sourceColumn: WBs_Wessex.Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBs_Wessex.Region'
+		dataType: string
+		lineageTag: 486f56df-2d97-4be9-9aad-79479d9ea4b1
+		summarizeBy: none
+		sourceColumn: WBs_Wessex.Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBs_Wessex.Area'
+		dataType: string
+		lineageTag: 9e7346d6-047f-433a-894e-deb1889916c6
+		summarizeBy: none
+		sourceColumn: WBs_Wessex.Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBs_Wessex.Catchment'
+		dataType: string
+		lineageTag: c74a2fb1-5745-4885-b7ff-07b39668b7ab
+		summarizeBy: none
+		sourceColumn: WBs_Wessex.Catchment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBs_Wessex.OP Catchment'
+		dataType: string
+		lineageTag: 5adf2e7d-fd8a-471f-a0a0-0d8bc8ce9ae2
+		summarizeBy: none
+		sourceColumn: WBs_Wessex.OP Catchment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBs_Wessex.Authority'
+		dataType: string
+		lineageTag: c6149653-b24c-446f-bd73-a139d2bfc703
+		summarizeBy: none
+		sourceColumn: WBs_Wessex.Authority
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WBs_Wessex.HMD'
+		dataType: string
+		lineageTag: a1d46115-4e9c-4293-80fd-48cb24a7abd0
+		summarizeBy: none
+		sourceColumn: WBs_Wessex.HMD
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Wessex RNAGs (2)' = m
+		mode: import
+		source = ```
+				let
+				    Source = Table.NestedJoin(#"reporting vw_WaterbodyRff", {"WATERBODY_ID"}, WBs_Wessex, {"ID"}, "WBs_Wessex", JoinKind.Inner),
+				    #"Expanded WBs_Wessex" = Table.ExpandTableColumn(Source, "WBs_Wessex", {"ID", "Name", "Version", "Category", "Region", "Area", "Area Team", "RBD", "Catchment", "OP Catchment", "Country", "Authority", "HMD"}, {"WBs_Wessex.ID", "WBs_Wessex.Name", "WBs_Wessex.Version", "WBs_Wessex.Category", "WBs_Wessex.Region", "WBs_Wessex.Area", "WBs_Wessex.Area Team", "WBs_Wessex.RBD", "WBs_Wessex.Catchment", "WBs_Wessex.OP Catchment", "WBs_Wessex.Country", "WBs_Wessex.Authority", "WBs_Wessex.HMD"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Expanded WBs_Wessex",{"WBs_Wessex.Version", "WBs_Wessex.Category", "WBs_Wessex.Country", "WBs_Wessex.RBD", "WBs_Wessex.Area Team"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Columns",{{"CREATED_DATE", type date}}),
+				    #"Sorted Rows" = Table.Buffer( 
+				Table.Sort(#"Changed Type",{{"CREATED_DATE", Order.Descending}})),
+				    #"Removed Duplicates" = Table.Distinct(#"Sorted Rows", {"WATERBODY_ID", "RFF_TYPE", "CLASS_ITEM_NAME", "SWMI_NAME", "SWMI_CERTAINTY_NAME", "RFF_ACTION_NAME", "BUSINESS_CATEGORY_NAME"})
+				in
+				    #"Removed Duplicates"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

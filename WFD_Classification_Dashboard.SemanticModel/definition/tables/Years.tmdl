@@ -1,0 +1,28 @@
+table Years
+	lineageTag: 4343a15e-651d-45d5-9171-05b57e552147
+
+	measure 'Annums Value' = SELECTEDVALUE('Years'[Years])
+		formatString: 0
+		lineageTag: 7d6fbfb5-f3ee-4d38-a79e-f3031778cf23
+
+	column Years
+		dataType: int64
+		formatString: 0
+		lineageTag: ec853bf6-1d06-4611-93fd-81e7b78677aa
+		summarizeBy: none
+		isDataTypeInferred
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition Years-a7d858cf-9e48-4eca-979a-fb2993607129 = calculated
+		mode: import
+		source = {2009,2010,2011,2012,2013,2014,2015,2016,2019,2022}
+
+	annotation PBI_Id = 6a2f673c34e44c019ccce124b7af0243
+

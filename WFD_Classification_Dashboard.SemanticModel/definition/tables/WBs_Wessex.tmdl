@@ -1,0 +1,122 @@
+table WBs_Wessex
+	lineageTag: eaebb628-7621-4485-b81f-c8ec398f46eb
+
+	column ID
+		dataType: string
+		lineageTag: fa711541-4a0b-4e30-9400-0ea54374615c
+		summarizeBy: none
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: c270335c-218e-41d7-9e34-6bfd3c29c1f0
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Version
+		dataType: string
+		lineageTag: 396f0da6-774d-436f-926e-6c8b3e49bcfd
+		summarizeBy: none
+		sourceColumn: Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: a6095db8-2959-42e9-a186-2d95f106cb2e
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 4d1fc0b8-61c8-4712-ba97-aacee0b6ddca
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Area
+		dataType: string
+		lineageTag: 4d7eba13-de99-42da-96de-ae5d85bfd74a
+		summarizeBy: none
+		sourceColumn: Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Area Team'
+		dataType: string
+		lineageTag: 33fff065-68cd-4608-8cef-0a21f9a06238
+		summarizeBy: none
+		sourceColumn: Area Team
+
+		annotation SummarizationSetBy = Automatic
+
+	column RBD
+		dataType: string
+		lineageTag: 934363c9-d6ed-435a-8837-1d5c7d9c4ca5
+		summarizeBy: none
+		sourceColumn: RBD
+
+		annotation SummarizationSetBy = Automatic
+
+	column Catchment
+		dataType: string
+		lineageTag: 81b3e972-c3d9-4138-83b4-91fae3b472b0
+		summarizeBy: none
+		sourceColumn: Catchment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'OP Catchment'
+		dataType: string
+		lineageTag: 7b765e48-9861-49c0-96be-ee448729fb30
+		summarizeBy: none
+		sourceColumn: OP Catchment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 86bdceb6-8e29-47d2-a063-69c768e1df9a
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Authority
+		dataType: string
+		lineageTag: 08c6ee32-1f29-4189-b3c5-b177af855d2b
+		summarizeBy: none
+		sourceColumn: Authority
+
+		annotation SummarizationSetBy = Automatic
+
+	column HMD
+		dataType: string
+		lineageTag: 269375bd-f43c-47e0-a808-aa2f1cbc47e8
+		summarizeBy: none
+		sourceColumn: HMD
+
+		annotation SummarizationSetBy = Automatic
+
+	partition WBs_Wessex = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\jv000029\OneDrive - Defra\WBs_Wessex.csv"),[Delimiter=",", Columns=13, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}, {"Column7", type text}, {"Column8", type text}, {"Column9", type text}, {"Column10", type text}, {"Column11", type text}, {"Column12", type text}, {"Column13", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"ID", type text}, {"Name", type text}, {"Version", type text}, {"Category", type text}, {"Region", type text}, {"Area", type text}, {"Area Team", type text}, {"RBD", type text}, {"Catchment", type text}, {"OP Catchment", type text}, {"Country", type text}, {"Authority", type text}, {"HMD", type text}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
