@@ -1,0 +1,255 @@
+table 'WFD_Wessex (2)'
+	lineageTag: a1b8c5db-89ae-44cd-bbf1-1281bce15be0
+
+	column Column1
+		dataType: int64
+		formatString: 0
+		lineageTag: 6c9b4d55-1e7f-4115-9c05-0342b9bde296
+		summarizeBy: sum
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'X.2'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5b3efdb1-f3e4-4232-bbf6-84bd645914a8
+		summarizeBy: sum
+		sourceColumn: X.2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'X.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: ba4d95e6-8de5-4f38-a75e-7212c8bb38f5
+		summarizeBy: sum
+		sourceColumn: X.1
+
+		annotation SummarizationSetBy = Automatic
+
+	column X
+		dataType: int64
+		formatString: 0
+		lineageTag: 8219b629-f996-4934-8b49-3b1af41b073d
+		summarizeBy: sum
+		sourceColumn: X
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'River.Basin.District'
+		dataType: string
+		lineageTag: 141e0f3e-6531-4e45-b004-cc7ae5032931
+		summarizeBy: none
+		sourceColumn: River.Basin.District
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Management.Catchment'
+		dataType: string
+		lineageTag: ba2fe9c5-e6c3-49db-8d14-ece184a43c67
+		summarizeBy: none
+		sourceColumn: Management.Catchment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Operational.Catchment'
+		dataType: string
+		lineageTag: d3cfcd60-c90c-4116-87fc-d919da2c2368
+		summarizeBy: none
+		sourceColumn: Operational.Catchment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Water.Body.ID'
+		dataType: string
+		lineageTag: ed2e7196-eb2a-42a5-adea-90e7ef9e0149
+		summarizeBy: none
+		sourceColumn: Water.Body.ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Water.Body'
+		dataType: string
+		lineageTag: c0bc8230-aea0-47a4-80b2-ffe474a3d2fe
+		summarizeBy: none
+		sourceColumn: Water.Body
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Water.Body.Type'
+		dataType: string
+		lineageTag: 22a2a292-4198-4f89-8d0f-1629b6a06a3c
+		summarizeBy: none
+		sourceColumn: Water.Body.Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Easting
+		dataType: int64
+		formatString: 0
+		lineageTag: 1c112d16-78fd-413e-85f2-fda0b094eb59
+		summarizeBy: sum
+		sourceColumn: Easting
+
+		annotation SummarizationSetBy = Automatic
+
+	column Northing
+		dataType: int64
+		formatString: 0
+		lineageTag: 36abaf13-42e9-47a3-8829-680e25521307
+		summarizeBy: sum
+		sourceColumn: Northing
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ngr
+		dataType: string
+		lineageTag: 87e61dbd-6388-4f35-813e-55aac66bc251
+		summarizeBy: none
+		sourceColumn: Ngr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hydromorphological.designation'
+		dataType: string
+		lineageTag: 5e4a6d0d-ad16-429d-bf88-81e9e65fecac
+		summarizeBy: none
+		sourceColumn: Hydromorphological.designation
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 4f8414a3-bc69-44da-ba08-bdf75259793a
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: bc160c22-f460-4179-b748-30e0dd685efa
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status.Sort'
+		dataType: string
+		lineageTag: ef4d1a7a-d74b-4fc3-b5d0-9d590c308d3a
+		summarizeBy: none
+		sourceColumn: Status.Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cycle
+		dataType: int64
+		formatString: 0
+		lineageTag: d0b92f0c-bc53-444a-ba2d-d589f8a9ebe9
+		summarizeBy: sum
+		sourceColumn: Cycle
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Classification.Level'
+		dataType: string
+		lineageTag: bc9f45e2-227a-46c1-81fe-7c4848e6d00b
+		summarizeBy: none
+		sourceColumn: Classification.Level
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Classification.Item'
+		dataType: string
+		lineageTag: 5f48a231-538b-4558-8366-ece84df24123
+		summarizeBy: none
+		sourceColumn: Classification.Item
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Classification.ID'
+		dataType: string
+		lineageTag: 13586d37-9ef6-415c-b98f-701ced4125a5
+		summarizeBy: none
+		sourceColumn: Classification.ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Certainty
+		dataType: string
+		lineageTag: d30f4e28-67f2-431c-aa3a-3d9075f638fe
+		summarizeBy: none
+		sourceColumn: Certainty
+
+		annotation SummarizationSetBy = Automatic
+
+	column Confidence
+		dataType: string
+		lineageTag: b64d5ba3-86f2-4890-adc9-374e285d325f
+		summarizeBy: none
+		sourceColumn: Confidence
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Deterioration.Type'
+		dataType: string
+		lineageTag: 98dc011c-3d48-43fd-9ea5-ad8aa4da3394
+		summarizeBy: none
+		sourceColumn: Deterioration.Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Linked.Reasons'
+		dataType: string
+		lineageTag: 2a852ac0-95d0-4d60-a568-afd25336146a
+		summarizeBy: none
+		sourceColumn: Linked.Reasons
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Investigation.Outcome'
+		dataType: string
+		lineageTag: 3b0616cb-ed7f-4e5d-b148-46d6e355a514
+		summarizeBy: none
+		sourceColumn: Investigation.Outcome
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Classification Item Subgroup'
+		dataType: string
+		lineageTag: 63ebc44f-13ad-48dd-9cf1-f34d53ecc002
+		summarizeBy: none
+		sourceColumn: Classification Item Subgroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Classification Item Categories'
+		dataType: string
+		lineageTag: 52154eea-f479-4651-b170-e2bca9a35ff8
+		summarizeBy: none
+		sourceColumn: Classification Item Categories
+
+		annotation SummarizationSetBy = Automatic
+
+	column Broad_Categories
+		dataType: string
+		lineageTag: b794bd40-e60a-4ec7-a71d-4487fb1d3828
+		summarizeBy: none
+		sourceColumn: Broad_Categories
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'WFD_Wessex (2)' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\jv000029\OneDrive - Defra\WFD_Wessex.csv"),[Delimiter=",", Columns=29, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"", Int64.Type}, {"X.2", Int64.Type}, {"X.1", Int64.Type}, {"X", Int64.Type}, {"River.Basin.District", type text}, {"Management.Catchment", type text}, {"Operational.Catchment", type text}, {"Water.Body.ID", type text}, {"Water.Body", type text}, {"Water.Body.Type", type text}, {"Easting", Int64.Type}, {"Northing", Int64.Type}, {"Ngr", type text}, {"Hydromorphological.designation", type text}, {"Year", Int64.Type}, {"Status", type text}, {"Status.Sort", type text}, {"Cycle", Int64.Type}, {"Classification.Level", type text}, {"Classification.Item", type text}, {"Classification.ID", type text}, {"Certainty", type text}, {"Confidence", type text}, {"Deterioration.Type", type text}, {"Linked.Reasons", type text}, {"Investigation.Outcome", type text}, {"Classification Item Subgroup", type text}, {"Classification Item Categories", type text}, {"Broad_Categories", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

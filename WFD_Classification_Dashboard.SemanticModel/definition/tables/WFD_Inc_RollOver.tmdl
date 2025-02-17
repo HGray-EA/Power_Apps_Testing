@@ -1,0 +1,291 @@
+table WFD_Inc_RollOver
+	lineageTag: c105ebca-e6a2-4e3b-9285-d708318c19a4
+
+	column 'Water.Body.ID'
+		dataType: string
+		lineageTag: 02b2cc37-fc79-40ba-9a5f-cf327525680a
+		summarizeBy: none
+		sourceColumn: Water.Body.ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 5cc94692-7e3f-48b9-9f5e-161f191ccd4f
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column ROLLED_FORWARD_FROM_YEAR
+		dataType: int64
+		formatString: 0
+		lineageTag: ffbd87b4-756f-4c24-8b9b-04e21d15c713
+		summarizeBy: sum
+		sourceColumn: ROLLED_FORWARD_FROM_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cycle
+		dataType: int64
+		formatString: 0
+		lineageTag: d7fd0c65-8769-44c7-aaca-4212ff356a75
+		summarizeBy: sum
+		sourceColumn: Cycle
+
+		annotation SummarizationSetBy = Automatic
+
+	column DRAFT_STATUS_NAME
+		dataType: string
+		lineageTag: e4cbd360-5276-4478-8139-7dd8295a0bb8
+		summarizeBy: none
+		sourceColumn: DRAFT_STATUS_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column STATPOT_NAME
+		dataType: string
+		lineageTag: 1934b443-254d-4438-a9e2-38e21f61856e
+		summarizeBy: none
+		sourceColumn: STATPOT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column ALT_CLASSIFICATION_FLAG
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1a951d73-694a-448f-839b-9624d0327fd9
+		summarizeBy: none
+		sourceColumn: ALT_CLASSIFICATION_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROBLEM_UID
+		dataType: int64
+		formatString: 0
+		lineageTag: 37aa355d-8e36-4638-9e67-c18e33da1afa
+		summarizeBy: count
+		sourceColumn: PROBLEM_UID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLASS_ITEM_NAME
+		dataType: string
+		lineageTag: c39eef5f-8edb-4bd7-84f8-ce2724636261
+		summarizeBy: none
+		sourceColumn: CLASS_ITEM_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLASS_ITEM_SEPA_NAME
+		dataType: string
+		lineageTag: 4402d1f6-a616-4c9d-967e-54e9025c8670
+		summarizeBy: none
+		sourceColumn: CLASS_ITEM_SEPA_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLASS_ITEM_TYPE_NAME
+		dataType: string
+		lineageTag: f56eadf7-e71d-40ea-b8bb-f52559fd65f1
+		summarizeBy: none
+		sourceColumn: CLASS_ITEM_TYPE_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLASS_LEVEL_NAME
+		dataType: string
+		lineageTag: 0bc7bd4f-0f92-4f55-a348-c445e159aed5
+		summarizeBy: none
+		sourceColumn: CLASS_LEVEL_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column PARENT_CLASS_ITEM_ID
+		dataType: string
+		lineageTag: fead44a2-b934-4e35-abf1-79a578879754
+		summarizeBy: none
+		sourceColumn: PARENT_CLASS_ITEM_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PARENT_CLASS_ITEM_NAME
+		dataType: string
+		lineageTag: 93ef367a-a76d-4bb6-86d0-e1d20540ad22
+		summarizeBy: none
+		sourceColumn: PARENT_CLASS_ITEM_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLASS_ITEM_INFO_ONLY
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1a200b84-1a53-4b07-9854-ccdd17c9c9dd
+		summarizeBy: none
+		sourceColumn: CLASS_ITEM_INFO_ONLY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLASSIFICATION_DISPLAY_NAME
+		dataType: string
+		lineageTag: 9ff3d910-5221-4e05-8b0b-0da015280137
+		summarizeBy: none
+		sourceColumn: CLASSIFICATION_DISPLAY_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLASSIFICATION_DISPLAY_NAME_SHORT
+		dataType: string
+		lineageTag: edafa16c-b057-40a3-9db0-f0f109d48c39
+		summarizeBy: none
+		sourceColumn: CLASSIFICATION_DISPLAY_NAME_SHORT
+
+		annotation SummarizationSetBy = Automatic
+
+	column DRIVER
+		dataType: string
+		lineageTag: ff41df90-94c0-4220-9e5b-dd69c1b3be10
+		summarizeBy: none
+		sourceColumn: DRIVER
+
+		annotation SummarizationSetBy = Automatic
+
+	column ELEM_GOOD
+		dataType: string
+		lineageTag: 3bd867fb-0a50-4e0d-b11c-5aae4b69f097
+		summarizeBy: none
+		sourceColumn: ELEM_GOOD
+
+		annotation SummarizationSetBy = Automatic
+
+	column ELEM_LESS_GOOD
+		dataType: string
+		lineageTag: 5ccc8777-2b58-4010-ad10-53725855388a
+		summarizeBy: none
+		sourceColumn: ELEM_LESS_GOOD
+
+		annotation SummarizationSetBy = Automatic
+
+	column ENVIRONMENTAL_DRIVER_ID
+		dataType: string
+		lineageTag: 930715b4-b008-4d90-8417-5e66fbb003a9
+		summarizeBy: none
+		sourceColumn: ENVIRONMENTAL_DRIVER_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column STATUS
+		dataType: string
+		lineageTag: 43e1bffa-0d27-4c48-a791-7a1fc4c3cf4f
+		summarizeBy: none
+		sourceColumn: STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column CERTAINTY_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 53455c39-9024-49a5-af37-cd3bd5b60871
+		summarizeBy: count
+		sourceColumn: CERTAINTY_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CERTAINTY_NAME
+		dataType: string
+		lineageTag: 4713d257-d263-49f0-b272-429d03c7662f
+		summarizeBy: none
+		sourceColumn: CERTAINTY_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CERTAINTY_LESS_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 5015cd01-63de-46ae-90fc-c81531b0d5c4
+		summarizeBy: count
+		sourceColumn: CERTAINTY_LESS_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CERTAINTY_LESS_NAME
+		dataType: string
+		lineageTag: b53ea9e7-c574-457d-96fe-e949f284369c
+		summarizeBy: none
+		sourceColumn: CERTAINTY_LESS_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CERTAINTY_OVERRIDE_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 0d561035-d055-4924-83b2-21f03adbf385
+		summarizeBy: count
+		sourceColumn: CERTAINTY_OVERRIDE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CERTAINTY_OVERIDE_NAME
+		dataType: string
+		lineageTag: 2550b663-6eb4-460d-9de1-90181576078e
+		summarizeBy: none
+		sourceColumn: CERTAINTY_OVERIDE_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column DETERIORATION_TYPE_CID
+		dataType: int64
+		formatString: 0
+		lineageTag: 702dfb97-3ba0-417f-8bde-0b026505a9ff
+		summarizeBy: count
+		sourceColumn: DETERIORATION_TYPE_CID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DETERIORATION_TYPE
+		dataType: string
+		lineageTag: f92a7e2a-cec1-4316-8646-29230989933e
+		summarizeBy: none
+		sourceColumn: DETERIORATION_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DETERIORATION_CERTAINTY_CID
+		dataType: int64
+		formatString: 0
+		lineageTag: c16ba198-5fb7-4b41-9b89-b1923ad4c758
+		summarizeBy: count
+		sourceColumn: DETERIORATION_CERTAINTY_CID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DETERIORATION_CERTAINTY
+		dataType: string
+		lineageTag: 8b6f7a35-8fd2-4c88-8080-af5f827e860b
+		summarizeBy: none
+		sourceColumn: DETERIORATION_CERTAINTY
+
+		annotation SummarizationSetBy = Automatic
+
+	column M_Deleted
+		dataType: int64
+		formatString: 0
+		lineageTag: 594ceea1-128b-4439-9dc0-6ae726081d0a
+		summarizeBy: sum
+		sourceColumn: M_Deleted
+
+		annotation SummarizationSetBy = Automatic
+
+	partition WFD_Inc_RollOver = m
+		mode: import
+		source =
+				let
+				    Source = Table.NestedJoin(#"reporting vw_WaterbodyAllClassification", {"Water.Body.ID", "Cycle", "Year"}, #"WFD_Wessex (2)", {"Water.Body.ID", "Cycle", "Year"}, "WFD_Wessex (2)", JoinKind.Inner)
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

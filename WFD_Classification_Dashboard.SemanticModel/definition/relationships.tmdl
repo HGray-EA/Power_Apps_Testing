@@ -1,0 +1,64 @@
+relationship 0eff597c-fbda-462b-9f1f-07bea2446862
+	fromColumn: WFD_Wessex.Year
+	toColumn: Years.Years
+
+relationship 29fa6f85-c2ac-4572-8787-4c9595d5d061
+	fromColumn: WFD_Wessex.Status
+	toColumn: 'Sort Table'.Status_Category
+
+relationship 6f966b6f-e5a3-4e19-aa30-b576853f3895
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'reporting vw_WaterbodyRff'.CREATED_DATE
+	toColumn: LocalDateTable_a157a326-970e-4a40-8998-a1c9ddedfaea.Date
+
+relationship 320313b3-d204-4ea5-8ebd-5735032a029f
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: WFD_Wessex.'Water.Body.ID'
+	toColumn: 'reporting vw_WaterbodyRff'.WATERBODY_ID
+
+relationship 9c05716d-5ab3-40a0-802c-685c595b253c
+	isActive: false
+	toCardinality: many
+	fromColumn: WFD_Wessex.'Classification.Item'
+	toColumn: 'reporting vw_WaterbodyRff'.CLASS_ITEM_NAME
+
+relationship 8c07a599-4eef-4fe7-8763-faab6f38b9fd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'reporting vw_WaterbodyRff (2)'.CREATED_DATE
+	toColumn: LocalDateTable_d9ac2cfe-ad4d-4608-a6f0-a9db33f0cc93.Date
+
+relationship 1ac73a88-4a43-4e1c-b2ae-8ea75c5c4679
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: WFD_Wessex.'Classification.Item'
+	toColumn: 'reporting vw_WaterbodyRff (2)'.CLASS_ITEM_NAME
+
+relationship 7fff487d-71be-4fa3-9cd7-d21268336a60
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: WFD_Wessex.'Water.Body.ID'
+	toColumn: 'reporting vw_WaterbodyAllClassification'.'Water.Body.ID'
+
+relationship 313d0bc8-8dd9-486a-a314-1c5c0928a2ab
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Wessex RNAGs'.CREATED_DATE
+	toColumn: LocalDateTable_ec501b0e-3b6b-416f-a6c5-01ee58801851.Date
+
+relationship 13a9a7de-4552-4398-9081-05170a8087cd
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'Wessex RNAGs'.WATERBODY_ID
+	toColumn: WFD_Wessex.'Water.Body.ID'
+
+relationship c6a027ce-bbae-43f1-98fd-2494b59f55b0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Wessex RNAGs (2)'.CREATED_DATE
+	toColumn: LocalDateTable_c9dd9cc8-5260-48bd-b2f5-f07c2be28d5e.Date
+
+relationship e006f327-0dfc-4c29-b069-0026b2e54756
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: WFD_Wessex.'Classification.Item'
+	toColumn: 'Wessex RNAGs (2)'.CLASS_ITEM_NAME
+

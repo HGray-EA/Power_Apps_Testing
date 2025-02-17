@@ -1,0 +1,35 @@
+model Model
+	culture: en-GB
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-GB
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["WFD_Wessex","Sort Table","reporting vw_WaterbodyRff","reporting vw_WaterbodyRff (2)","reporting vw_WaterbodyAllClassification","WFD_Wessex (2)","WFD_Inc_RollOver","WBs_Wessex","Wessex RNAGs","Wessex RNAGs (2)"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.129.905.0 (24.05)
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DateTableTemplate_7a2afa46-f8cd-4d50-92fe-002d0c29374b
+ref table Years
+ref table WFD_Wessex
+ref table 'Sort Table'
+ref table 'reporting vw_WaterbodyRff'
+ref table LocalDateTable_a157a326-970e-4a40-8998-a1c9ddedfaea
+ref table 'reporting vw_WaterbodyRff (2)'
+ref table LocalDateTable_d9ac2cfe-ad4d-4608-a6f0-a9db33f0cc93
+ref table 'reporting vw_WaterbodyAllClassification'
+ref table 'WFD_Wessex (2)'
+ref table WFD_Inc_RollOver
+ref table WBs_Wessex
+ref table 'Wessex RNAGs'
+ref table LocalDateTable_ec501b0e-3b6b-416f-a6c5-01ee58801851
+ref table 'Wessex RNAGs (2)'
+ref table LocalDateTable_c9dd9cc8-5260-48bd-b2f5-f07c2be28d5e
+
+ref cultureInfo en-GB
+
