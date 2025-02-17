@@ -6,7 +6,7 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["WFD_Wessex","Sort Table","Table","reporting vw_WaterbodyRff","reporting vw_WaterbodyRff (2)","reporting vw_WaterbodyAllClassification","WFD_Wessex (2)","WFD_Inc_RollOver","WBs_Wessex","Wessex RNAGs","Wessex RNAGs (2)"]
+annotation PBI_QueryOrder = ["WFD_Wessex","Sort Table","reporting vw_WaterbodyRff","reporting vw_WaterbodyRff (2)","reporting vw_WaterbodyAllClassification","WFD_Wessex (2)","WFD_Inc_RollOver","WBs_Wessex","Wessex RNAGs","Wessex RNAGs (2)"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
@@ -16,10 +16,8 @@ annotation PBI_ProTooling = ["DevMode"]
 
 ref table DateTableTemplate_7a2afa46-f8cd-4d50-92fe-002d0c29374b
 ref table Years
-ref table Parameter
 ref table WFD_Wessex
 ref table 'Sort Table'
-ref table Table
 ref table 'reporting vw_WaterbodyRff'
 ref table LocalDateTable_a157a326-970e-4a40-8998-a1c9ddedfaea
 ref table 'reporting vw_WaterbodyRff (2)'
