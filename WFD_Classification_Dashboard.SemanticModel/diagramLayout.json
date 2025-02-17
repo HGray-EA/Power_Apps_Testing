@@ -4,7 +4,7 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 208.14496420935779,
+        "x": 0,
         "y": 0
       },
       "nodes": [
@@ -88,8 +88,8 @@
         },
         {
           "location": {
-            "x": 1079.6999999999998,
-            "y": 533.125
+            "x": 1359.2672558498236,
+            "y": 843.98204246979321
           },
           "nodeIndex": "WFD_Wessex (2)",
           "nodeLineageTag": "a1b8c5db-89ae-44cd-bbf1-1281bce15be0",
@@ -127,10 +127,11 @@
         },
         {
           "location": {
-            "x": 2177.2999999999993,
-            "y": 266.5625
+            "x": 2077.3087917033472,
+            "y": 264.5218630959867
           },
           "nodeIndex": "Wessex RNAGs",
+          "nodeLineageTag": "534863eb-030e-4a45-b6a4-cd5b718416d0",
           "size": {
             "height": 300,
             "width": 234
