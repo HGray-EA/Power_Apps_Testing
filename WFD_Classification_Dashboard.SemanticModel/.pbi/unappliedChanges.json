@@ -1,0 +1,210 @@
+{
+  "version": "1.0",
+  "conceptualSchemaSettings": {},
+  "queries": [
+    {
+      "name": "WFD_Wessex",
+      "lineageTag": "cfca852d-0b7b-4cb0-a9e4-0b998449405f",
+      "text": [
+        "let",
+        "    Source = Csv.Document(File.Contents(\"C:\\Users\\hg000051\\OneDrive - Defra\\Projects\\WFD Data\\WFD_Wessex.csv\"),[Delimiter=\",\", Columns=29, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+        "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+        "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"\", Int64.Type}, {\"X.2\", Int64.Type}, {\"X.1\", Int64.Type}, {\"X\", Int64.Type}, {\"River.Basin.District\", type text}, {\"Management.Catchment\", type text}, {\"Operational.Catchment\", type text}, {\"Water.Body.ID\", type text}, {\"Water.Body\", type text}, {\"Water.Body.Type\", type text}, {\"Easting\", Int64.Type}, {\"Northing\", Int64.Type}, {\"Ngr\", type text}, {\"Hydromorphological.designation\", type text}, {\"Year\", Int64.Type}, {\"Status\", type text}, {\"Status.Sort\", type text}, {\"Cycle\", Int64.Type}, {\"Classification.Level\", type text}, {\"Classification.Item\", type text}, {\"Classification.ID\", type text}, {\"Certainty\", type text}, {\"Confidence\", type text}, {\"Deterioration.Type\", type text}, {\"Linked.Reasons\", type text}, {\"Investigation.Outcome\", type text}, {\"Classification Item Subgroup\", type text}, {\"Classification Item Categories\", type text}, {\"Broad_Categories\", type text}})",
+        "in",
+        "    #\"Changed Type\""
+      ],
+      "isDirectQuery": false,
+      "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\r\\n    Source = Csv.Document(File.Contents(\\\"C:\\\\Users\\\\hg000051\\\\OneDrive - Defra\\\\Projects\\\\WFD Data\\\\WFD_Wessex.csv\\\"),[Delimiter=\\\",\\\", Columns=29, Encoding=1252, QuoteStyle=QuoteStyle.None]),\\r\\n    #\\\"Promoted Headers\\\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),\\r\\n    #\\\"Changed Type\\\" = Table.TransformColumnTypes(#\\\"Promoted Headers\\\",{{\\\"\\\", Int64.Type}, {\\\"X.2\\\", Int64.Type}, {\\\"X.1\\\", Int64.Type}, {\\\"X\\\", Int64.Type}, {\\\"River.Basin.District\\\", type text}, {\\\"Management.Catchment\\\", type text}, {\\\"Operational.Catchment\\\", type text}, {\\\"Water.Body.ID\\\", type text}, {\\\"Water.Body\\\", type text}, {\\\"Water.Body.Type\\\", type text}, {\\\"Easting\\\", Int64.Type}, {\\\"Northing\\\", Int64.Type}, {\\\"Ngr\\\", type text}, {\\\"Hydromorphological.designation\\\", type text}, {\\\"Year\\\", Int64.Type}, {\\\"Status\\\", type text}, {\\\"Status.Sort\\\", type text}, {\\\"Cycle\\\", Int64.Type}, {\\\"Classification.Level\\\", type text}, {\\\"Classification.Item\\\", type text}, {\\\"Classification.ID\\\", type text}, {\\\"Certainty\\\", type text}, {\\\"Confidence\\\", type text}, {\\\"Deterioration.Type\\\", type text}, {\\\"Linked.Reasons\\\", type text}, {\\\"Investigation.Outcome\\\", type text}, {\\\"Classification Item Subgroup\\\", type text}, {\\\"Classification Item Categories\\\", type text}, {\\\"Broad_Categories\\\", type text}})\\r\\nin\\r\\n    #\\\"Changed Type\\\"\",\"ReferencedQueriesFormulaText\":{}}",
+      "loadAsTableDisabled": false,
+      "resultType": "Table",
+      "isHidden": false
+    },
+    {
+      "name": "Sort Table",
+      "lineageTag": "281d7fb4-863e-4d9f-8e49-a7c009193aef",
+      "text": [
+        "let",
+        "    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i45W8shMz1DSUTJVitWJVnLPz08BckzAHN/8lNSixJJUoIAxWCAgP78IyDECc5wSQSoNlWJjAQ==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Status_Category = _t, Column1 = _t]),",
+        "    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"Status_Category\", type text}, {\"Column1\", Int64.Type}}),",
+        "    #\"Removed Columns\" = Table.RemoveColumns(#\"Changed Type\",{\"Column1\"})",
+        "in",
+        "    #\"Removed Columns\""
+      ],
+      "isDirectQuery": false,
+      "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\r\\n    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\\\"i45W8shMz1DSUTJVitWJVnLPz08BckzAHN/8lNSixJJUoIAxWCAgP78IyDECc5wSQSoNlWJjAQ==\\\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Status_Category = _t, Column1 = _t]),\\r\\n    #\\\"Changed Type\\\" = Table.TransformColumnTypes(Source,{{\\\"Status_Category\\\", type text}, {\\\"Column1\\\", Int64.Type}}),\\r\\n    #\\\"Removed Columns\\\" = Table.RemoveColumns(#\\\"Changed Type\\\",{\\\"Column1\\\"})\\r\\nin\\r\\n    #\\\"Removed Columns\\\"\",\"ReferencedQueriesFormulaText\":{}}",
+      "loadAsTableDisabled": false,
+      "resultType": "Table",
+      "isHidden": false
+    },
+    {
+      "name": "reporting vw_WaterbodyRff",
+      "lineageTag": "1c062e03-3da7-4608-b283-565ac05cc634",
+      "text": [
+        "let",
+        "    Source = Sql.Databases(\"PRDCPZDBSSQ1402.PRODDS.NTNL\"),",
+        "    CPS_REPORTING_LIVE = Source{[Name=\"CPS_REPORTING_LIVE\"]}[Data],",
+        "    reporting_vw_WaterbodyRff = CPS_REPORTING_LIVE{[Schema=\"reporting\",Item=\"vw_WaterbodyRff\"]}[Data],",
+        "    #\"Removed Columns\" = Table.RemoveColumns(reporting_vw_WaterbodyRff,{\"SOURCE_APPORTIONMENT_TYPE_NAME\", \"VALIDATION_VALUE\", \"ORGANISATION_PARTY_UID\", \"PARTY_NAME\", \"PARTY_TYPE_UID\", \"PARTY_TYPE_NAME\", \"M_DELETED\", \"LEGACY_RFF_UID\", \"SOURCE_APPORTIONMENT_TYPE_UID\"}),",
+        "    #\"Sorted Rows\" = Table.Sort(#\"Removed Columns\",{{\"WATERBODY_ID\", Order.Ascending}}),",
+        "    #\"Removed Top Rows\" = Table.Skip(#\"Sorted Rows\",5000),",
+        "    #\"Removed Top Rows1\" = Table.Skip(#\"Removed Top Rows\",5000),",
+        "    #\"Removed Top Rows2\" = Table.Skip(#\"Removed Top Rows1\",5000),",
+        "    #\"Removed Top Rows3\" = Table.Skip(#\"Removed Top Rows2\",5000),",
+        "    #\"Removed Top Rows4\" = Table.Skip(#\"Removed Top Rows3\",5000),",
+        "    #\"Removed Top Rows5\" = Table.Skip(#\"Removed Top Rows4\",5000),",
+        "    #\"Removed Top Rows6\" = Table.Skip(#\"Removed Top Rows5\",5000),",
+        "    #\"Removed Top Rows7\" = Table.Skip(#\"Removed Top Rows6\",5000),",
+        "    #\"Removed Top Rows8\" = Table.Skip(#\"Removed Top Rows7\",5000),",
+        "    #\"Removed Top Rows9\" = Table.Skip(#\"Removed Top Rows8\",5000),",
+        "    #\"Removed Top Rows10\" = Table.Skip(#\"Removed Top Rows9\",5000),",
+        "    #\"Removed Top Rows11\" = Table.Skip(#\"Removed Top Rows10\",5000),",
+        "    #\"Removed Top Rows12\" = Table.Skip(#\"Removed Top Rows11\",3687),",
+        "    #\"Sorted Rows1\" = Table.Sort(#\"Removed Top Rows12\",{{\"WATERBODY_ID\", Order.Descending}}),",
+        "    #\"Filtered Rows\" = Table.SelectRows(#\"Sorted Rows1\", each Text.StartsWith([WATERBODY_ID], \"GB108\") or Text.StartsWith([WATERBODY_ID], \"GB109\") or Text.StartsWith([WATERBODY_ID], \"GB308\") or Text.StartsWith([WATERBODY_ID], \"GB408\") or Text.StartsWith([WATERBODY_ID], \"GB409\") or Text.StartsWith([WATERBODY_ID], \"GB510\") or Text.StartsWith([WATERBODY_ID], \"GB520\") or Text.StartsWith([WATERBODY_ID], \"GB620\") or Text.StartsWith([WATERBODY_ID], \"GB640\") or Text.StartsWith([WATERBODY_ID], \"GB670\") or Text.StartsWith([WATERBODY_ID], \"GB680\") or Text.StartsWith([WATERBODY_ID], \"GB708\") or Text.StartsWith([WATERBODY_ID], \"GB709\")),",
+        "    #\"Sorted Rows2\" = Table.Sort(#\"Filtered Rows\",{{\"WATERBODY_ID\", Order.Ascending}})",
+        "in",
+        "    #\"Sorted Rows2\""
+      ],
+      "isDirectQuery": false,
+      "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\r\\n    Source = Sql.Databases(\\\"PRDCPZDBSSQ1402.PRODDS.NTNL\\\"),\\r\\n    CPS_REPORTING_LIVE = Source{[Name=\\\"CPS_REPORTING_LIVE\\\"]}[Data],\\r\\n    reporting_vw_WaterbodyRff = CPS_REPORTING_LIVE{[Schema=\\\"reporting\\\",Item=\\\"vw_WaterbodyRff\\\"]}[Data],\\r\\n    #\\\"Removed Columns\\\" = Table.RemoveColumns(reporting_vw_WaterbodyRff,{\\\"SOURCE_APPORTIONMENT_TYPE_NAME\\\", \\\"VALIDATION_VALUE\\\", \\\"ORGANISATION_PARTY_UID\\\", \\\"PARTY_NAME\\\", \\\"PARTY_TYPE_UID\\\", \\\"PARTY_TYPE_NAME\\\", \\\"M_DELETED\\\", \\\"LEGACY_RFF_UID\\\", \\\"SOURCE_APPORTIONMENT_TYPE_UID\\\"}),\\r\\n    #\\\"Sorted Rows\\\" = Table.Sort(#\\\"Removed Columns\\\",{{\\\"WATERBODY_ID\\\", Order.Ascending}}),\\r\\n    #\\\"Removed Top Rows\\\" = Table.Skip(#\\\"Sorted Rows\\\",5000),\\r\\n    #\\\"Removed Top Rows1\\\" = Table.Skip(#\\\"Removed Top Rows\\\",5000),\\r\\n    #\\\"Removed Top Rows2\\\" = Table.Skip(#\\\"Removed Top Rows1\\\",5000),\\r\\n    #\\\"Removed Top Rows3\\\" = Table.Skip(#\\\"Removed Top Rows2\\\",5000),\\r\\n    #\\\"Removed Top Rows4\\\" = Table.Skip(#\\\"Removed Top Rows3\\\",5000),\\r\\n    #\\\"Removed Top Rows5\\\" = Table.Skip(#\\\"Removed Top Rows4\\\",5000),\\r\\n    #\\\"Removed Top Rows6\\\" = Table.Skip(#\\\"Removed Top Rows5\\\",5000),\\r\\n    #\\\"Removed Top Rows7\\\" = Table.Skip(#\\\"Removed Top Rows6\\\",5000),\\r\\n    #\\\"Removed Top Rows8\\\" = Table.Skip(#\\\"Removed Top Rows7\\\",5000),\\r\\n    #\\\"Removed Top Rows9\\\" = Table.Skip(#\\\"Removed Top Rows8\\\",5000),\\r\\n    #\\\"Removed Top Rows10\\\" = Table.Skip(#\\\"Removed Top Rows9\\\",5000),\\r\\n    #\\\"Removed Top Rows11\\\" = Table.Skip(#\\\"Removed Top Rows10\\\",5000),\\r\\n    #\\\"Removed Top Rows12\\\" = Table.Skip(#\\\"Removed Top Rows11\\\",3687),\\r\\n    #\\\"Sorted Rows1\\\" = Table.Sort(#\\\"Removed Top Rows12\\\",{{\\\"WATERBODY_ID\\\", Order.Descending}}),\\r\\n    #\\\"Filtered Rows\\\" = Table.SelectRows(#\\\"Sorted Rows1\\\", each Text.StartsWith([WATERBODY_ID], \\\"GB108\\\") or Text.StartsWith([WATERBODY_ID], \\\"GB109\\\") or Text.StartsWith([WATERBODY_ID], \\\"GB308\\\") or Text.StartsWith([WATERBODY_ID], \\\"GB408\\\") or Text.StartsWith([WATERBODY_ID], \\\"GB409\\\") or Text.StartsWith([WATERBODY_ID], \\\"GB510\\\") or Text.StartsWith([WATERBODY_ID], \\\"GB520\\\") or Text.StartsWith([WATERBODY_ID], \\\"GB620\\\") or Text.StartsWith([WATERBODY_ID], \\\"GB640\\\") or Text.StartsWith([WATERBODY_ID], \\\"GB670\\\") or Text.StartsWith([WATERBODY_ID], \\\"GB680\\\") or Text.StartsWith([WATERBODY_ID], \\\"GB708\\\") or Text.StartsWith([WATERBODY_ID], \\\"GB709\\\")),\\r\\n    #\\\"Sorted Rows2\\\" = Table.Sort(#\\\"Filtered Rows\\\",{{\\\"WATERBODY_ID\\\", Order.Ascending}})\\r\\nin\\r\\n    #\\\"Sorted Rows2\\\"\",\"ReferencedQueriesFormulaText\":{}}",
+      "loadAsTableDisabled": false,
+      "resultType": "Table",
+      "isHidden": false
+    },
+    {
+      "name": "reporting vw_WaterbodyRff (2)",
+      "lineageTag": "51635694-ce5c-4129-8556-166f55378738",
+      "text": [
+        "let",
+        "    Source = Sql.Databases(\"PRDCPZDBSSQ1402.PRODDS.NTNL\"),",
+        "    CPS_REPORTING_LIVE = Source{[Name=\"CPS_REPORTING_LIVE\"]}[Data],",
+        "    reporting_vw_WaterbodyRff = CPS_REPORTING_LIVE{[Schema=\"reporting\",Item=\"vw_WaterbodyRff\"]}[Data]",
+        "in",
+        "    reporting_vw_WaterbodyRff"
+      ],
+      "isDirectQuery": false,
+      "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\r\\n    Source = Sql.Databases(\\\"PRDCPZDBSSQ1402.PRODDS.NTNL\\\"),\\r\\n    CPS_REPORTING_LIVE = Source{[Name=\\\"CPS_REPORTING_LIVE\\\"]}[Data],\\r\\n    reporting_vw_WaterbodyRff = CPS_REPORTING_LIVE{[Schema=\\\"reporting\\\",Item=\\\"vw_WaterbodyRff\\\"]}[Data]\\r\\nin\\r\\n    reporting_vw_WaterbodyRff\",\"ReferencedQueriesFormulaText\":{}}",
+      "loadAsTableDisabled": false,
+      "resultType": "Unknown",
+      "isHidden": false
+    },
+    {
+      "name": "reporting vw_WaterbodyAllClassification",
+      "lineageTag": "4a5dac2f-2e58-49dc-b350-103b5004de43",
+      "text": [
+        "let",
+        "    Source = Sql.Databases(\"PRDCPZDBSSQ1402.PRODDS.NTNL\"),",
+        "    CPS_REPORTING_LIVE = Source{[Name=\"CPS_REPORTING_LIVE\"]}[Data],",
+        "    reporting_vw_WaterbodyAllClassification = CPS_REPORTING_LIVE{[Schema=\"reporting\",Item=\"vw_WaterbodyAllClassification\"]}[Data],",
+        "    #\"Renamed Columns\" = Table.RenameColumns(reporting_vw_WaterbodyAllClassification,{{\"WATERBODY_ID\", \"Water.Body.ID\"}, {\"CYCLE_NAME\", \"Cycle\"}, {\"CAL_YEAR\", \"Year\"}}),",
+        "    #\"Removed Columns\" = Table.RemoveColumns(#\"Renamed Columns\",{\"ENTITY_CLASSIFICATION_UID\", \"ENTITY_UID\", \"WATERBODY_UID\", \"WATERBODY_VERSION\", \"CYCLE_UID\", \"Draft_Status_CID\", \"STATPOT_CID\", \"TYPE_1_INVESTIGATION_UID\", \"TYPE_2_INVESTIGATION_UID\", \"CLASS_ITEM_UID\", \"CLASS_ITEM_ExternalID\", \"CLASS_ITEM_ID\", \"CLASS_ITEM_SEPA_ID\", \"CLASS_ITEM_TYPE_UID\", \"CLASS_LEVEL_CID\", \"PARENT_CLASS_ITEM_UID\", \"PARENT_CLASS_ITEM_ExternalID\", \"CLASSIFICATION_UID\", \"CLASSIFICATION_ExternalID\", \"CLASSIFICATION_METHOD_UID\", \"CLASSIFICATION_METHOD_NAME\", \"DATA_SOURCE\", \"CONTACT\", \"DATE_RETRIEVED\", \"COMMENTS\", \"WOE_USED\", \"CLASS_DERIVED_FLAG\", \"CLASS_COMMENTS\", \"ALT_CLASSIFICATION_COMMENT\"}),",
+        "    #\"Replaced Value\" = Table.ReplaceValue(#\"Removed Columns\", \"Cycle \", \"\", Replacer.ReplaceText, {\"Cycle\"}),",
+        "    #\"Filtered Rows\" = Table.SelectRows(#\"Replaced Value\", each true),",
+        "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Filtered Rows\",{{\"Cycle\", Int64.Type}})",
+        "",
+        "",
+        "in",
+        "    #\"Changed Type\""
+      ],
+      "isDirectQuery": false,
+      "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\r\\n    Source = Sql.Databases(\\\"PRDCPZDBSSQ1402.PRODDS.NTNL\\\"),\\r\\n    CPS_REPORTING_LIVE = Source{[Name=\\\"CPS_REPORTING_LIVE\\\"]}[Data],\\r\\n    reporting_vw_WaterbodyAllClassification = CPS_REPORTING_LIVE{[Schema=\\\"reporting\\\",Item=\\\"vw_WaterbodyAllClassification\\\"]}[Data],\\r\\n    #\\\"Renamed Columns\\\" = Table.RenameColumns(reporting_vw_WaterbodyAllClassification,{{\\\"WATERBODY_ID\\\", \\\"Water.Body.ID\\\"}, {\\\"CYCLE_NAME\\\", \\\"Cycle\\\"}, {\\\"CAL_YEAR\\\", \\\"Year\\\"}}),\\r\\n    #\\\"Removed Columns\\\" = Table.RemoveColumns(#\\\"Renamed Columns\\\",{\\\"ENTITY_CLASSIFICATION_UID\\\", \\\"ENTITY_UID\\\", \\\"WATERBODY_UID\\\", \\\"WATERBODY_VERSION\\\", \\\"CYCLE_UID\\\", \\\"Draft_Status_CID\\\", \\\"STATPOT_CID\\\", \\\"TYPE_1_INVESTIGATION_UID\\\", \\\"TYPE_2_INVESTIGATION_UID\\\", \\\"CLASS_ITEM_UID\\\", \\\"CLASS_ITEM_ExternalID\\\", \\\"CLASS_ITEM_ID\\\", \\\"CLASS_ITEM_SEPA_ID\\\", \\\"CLASS_ITEM_TYPE_UID\\\", \\\"CLASS_LEVEL_CID\\\", \\\"PARENT_CLASS_ITEM_UID\\\", \\\"PARENT_CLASS_ITEM_ExternalID\\\", \\\"CLASSIFICATION_UID\\\", \\\"CLASSIFICATION_ExternalID\\\", \\\"CLASSIFICATION_METHOD_UID\\\", \\\"CLASSIFICATION_METHOD_NAME\\\", \\\"DATA_SOURCE\\\", \\\"CONTACT\\\", \\\"DATE_RETRIEVED\\\", \\\"COMMENTS\\\", \\\"WOE_USED\\\", \\\"CLASS_DERIVED_FLAG\\\", \\\"CLASS_COMMENTS\\\", \\\"ALT_CLASSIFICATION_COMMENT\\\"}),\\r\\n    #\\\"Replaced Value\\\" = Table.ReplaceValue(#\\\"Removed Columns\\\", \\\"Cycle \\\", \\\"\\\", Replacer.ReplaceText, {\\\"Cycle\\\"}),\\r\\n    #\\\"Filtered Rows\\\" = Table.SelectRows(#\\\"Replaced Value\\\", each true),\\r\\n    #\\\"Changed Type\\\" = Table.TransformColumnTypes(#\\\"Filtered Rows\\\",{{\\\"Cycle\\\", Int64.Type}})\\r\\n\\r\\n\\r\\nin\\r\\n    #\\\"Changed Type\\\"\",\"ReferencedQueriesFormulaText\":{}}",
+      "loadAsTableDisabled": false,
+      "resultType": "Exception",
+      "isHidden": false
+    },
+    {
+      "name": "WFD_Wessex (2)",
+      "lineageTag": "a1b8c5db-89ae-44cd-bbf1-1281bce15be0",
+      "text": [
+        "let",
+        "    Source = Csv.Document(File.Contents(\"C:\\Users\\jv000029\\OneDrive - Defra\\WFD_Wessex.csv\"),[Delimiter=\",\", Columns=29, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+        "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+        "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"\", Int64.Type}, {\"X.2\", Int64.Type}, {\"X.1\", Int64.Type}, {\"X\", Int64.Type}, {\"River.Basin.District\", type text}, {\"Management.Catchment\", type text}, {\"Operational.Catchment\", type text}, {\"Water.Body.ID\", type text}, {\"Water.Body\", type text}, {\"Water.Body.Type\", type text}, {\"Easting\", Int64.Type}, {\"Northing\", Int64.Type}, {\"Ngr\", type text}, {\"Hydromorphological.designation\", type text}, {\"Year\", Int64.Type}, {\"Status\", type text}, {\"Status.Sort\", type text}, {\"Cycle\", Int64.Type}, {\"Classification.Level\", type text}, {\"Classification.Item\", type text}, {\"Classification.ID\", type text}, {\"Certainty\", type text}, {\"Confidence\", type text}, {\"Deterioration.Type\", type text}, {\"Linked.Reasons\", type text}, {\"Investigation.Outcome\", type text}, {\"Classification Item Subgroup\", type text}, {\"Classification Item Categories\", type text}, {\"Broad_Categories\", type text}})",
+        "in",
+        "    #\"Changed Type\""
+      ],
+      "isDirectQuery": false,
+      "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\r\\n    Source = Csv.Document(File.Contents(\\\"C:\\\\Users\\\\jv000029\\\\OneDrive - Defra\\\\WFD_Wessex.csv\\\"),[Delimiter=\\\",\\\", Columns=29, Encoding=1252, QuoteStyle=QuoteStyle.None]),\\r\\n    #\\\"Promoted Headers\\\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),\\r\\n    #\\\"Changed Type\\\" = Table.TransformColumnTypes(#\\\"Promoted Headers\\\",{{\\\"\\\", Int64.Type}, {\\\"X.2\\\", Int64.Type}, {\\\"X.1\\\", Int64.Type}, {\\\"X\\\", Int64.Type}, {\\\"River.Basin.District\\\", type text}, {\\\"Management.Catchment\\\", type text}, {\\\"Operational.Catchment\\\", type text}, {\\\"Water.Body.ID\\\", type text}, {\\\"Water.Body\\\", type text}, {\\\"Water.Body.Type\\\", type text}, {\\\"Easting\\\", Int64.Type}, {\\\"Northing\\\", Int64.Type}, {\\\"Ngr\\\", type text}, {\\\"Hydromorphological.designation\\\", type text}, {\\\"Year\\\", Int64.Type}, {\\\"Status\\\", type text}, {\\\"Status.Sort\\\", type text}, {\\\"Cycle\\\", Int64.Type}, {\\\"Classification.Level\\\", type text}, {\\\"Classification.Item\\\", type text}, {\\\"Classification.ID\\\", type text}, {\\\"Certainty\\\", type text}, {\\\"Confidence\\\", type text}, {\\\"Deterioration.Type\\\", type text}, {\\\"Linked.Reasons\\\", type text}, {\\\"Investigation.Outcome\\\", type text}, {\\\"Classification Item Subgroup\\\", type text}, {\\\"Classification Item Categories\\\", type text}, {\\\"Broad_Categories\\\", type text}})\\r\\nin\\r\\n    #\\\"Changed Type\\\"\",\"ReferencedQueriesFormulaText\":{}}",
+      "loadAsTableDisabled": false,
+      "resultType": "Exception",
+      "isHidden": false
+    },
+    {
+      "name": "WFD_Inc_RollOver",
+      "lineageTag": "c105ebca-e6a2-4e3b-9285-d708318c19a4",
+      "text": [
+        "let",
+        "    Source = Table.NestedJoin(#\"reporting vw_WaterbodyAllClassification\", {\"Water.Body.ID\", \"Cycle\", \"Year\"}, #\"WFD_Wessex (2)\", {\"Water.Body.ID\", \"Cycle\", \"Year\"}, \"WFD_Wessex (2)\", JoinKind.Inner)",
+        "in",
+        "    Source"
+      ],
+      "isDirectQuery": false,
+      "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\r\\n    Source = Table.NestedJoin(#\\\"reporting vw_WaterbodyAllClassification\\\", {\\\"Water.Body.ID\\\", \\\"Cycle\\\", \\\"Year\\\"}, #\\\"WFD_Wessex (2)\\\", {\\\"Water.Body.ID\\\", \\\"Cycle\\\", \\\"Year\\\"}, \\\"WFD_Wessex (2)\\\", JoinKind.Inner)\\r\\nin\\r\\n    Source\",\"ReferencedQueriesFormulaText\":{}}",
+      "loadAsTableDisabled": false,
+      "resultType": "Table",
+      "isHidden": false
+    },
+    {
+      "name": "WBs_Wessex",
+      "lineageTag": "eaebb628-7621-4485-b81f-c8ec398f46eb",
+      "text": [
+        "let",
+        "    Source = Csv.Document(File.Contents(\"C:\\Users\\jv000029\\OneDrive - Defra\\WBs_Wessex.csv\"),[Delimiter=\",\", Columns=13, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+        "    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"Column1\", type text}, {\"Column2\", type text}, {\"Column3\", type text}, {\"Column4\", type text}, {\"Column5\", type text}, {\"Column6\", type text}, {\"Column7\", type text}, {\"Column8\", type text}, {\"Column9\", type text}, {\"Column10\", type text}, {\"Column11\", type text}, {\"Column12\", type text}, {\"Column13\", type text}}),",
+        "    #\"Promoted Headers\" = Table.PromoteHeaders(#\"Changed Type\", [PromoteAllScalars=true]),",
+        "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"ID\", type text}, {\"Name\", type text}, {\"Version\", type text}, {\"Category\", type text}, {\"Region\", type text}, {\"Area\", type text}, {\"Area Team\", type text}, {\"RBD\", type text}, {\"Catchment\", type text}, {\"OP Catchment\", type text}, {\"Country\", type text}, {\"Authority\", type text}, {\"HMD\", type text}})",
+        "in",
+        "    #\"Changed Type1\""
+      ],
+      "isDirectQuery": false,
+      "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\r\\n    Source = Csv.Document(File.Contents(\\\"C:\\\\Users\\\\jv000029\\\\OneDrive - Defra\\\\WBs_Wessex.csv\\\"),[Delimiter=\\\",\\\", Columns=13, Encoding=1252, QuoteStyle=QuoteStyle.None]),\\r\\n    #\\\"Changed Type\\\" = Table.TransformColumnTypes(Source,{{\\\"Column1\\\", type text}, {\\\"Column2\\\", type text}, {\\\"Column3\\\", type text}, {\\\"Column4\\\", type text}, {\\\"Column5\\\", type text}, {\\\"Column6\\\", type text}, {\\\"Column7\\\", type text}, {\\\"Column8\\\", type text}, {\\\"Column9\\\", type text}, {\\\"Column10\\\", type text}, {\\\"Column11\\\", type text}, {\\\"Column12\\\", type text}, {\\\"Column13\\\", type text}}),\\r\\n    #\\\"Promoted Headers\\\" = Table.PromoteHeaders(#\\\"Changed Type\\\", [PromoteAllScalars=true]),\\r\\n    #\\\"Changed Type1\\\" = Table.TransformColumnTypes(#\\\"Promoted Headers\\\",{{\\\"ID\\\", type text}, {\\\"Name\\\", type text}, {\\\"Version\\\", type text}, {\\\"Category\\\", type text}, {\\\"Region\\\", type text}, {\\\"Area\\\", type text}, {\\\"Area Team\\\", type text}, {\\\"RBD\\\", type text}, {\\\"Catchment\\\", type text}, {\\\"OP Catchment\\\", type text}, {\\\"Country\\\", type text}, {\\\"Authority\\\", type text}, {\\\"HMD\\\", type text}})\\r\\nin\\r\\n    #\\\"Changed Type1\\\"\",\"ReferencedQueriesFormulaText\":{}}",
+      "loadAsTableDisabled": false,
+      "resultType": "Exception",
+      "isHidden": false
+    },
+    {
+      "name": "Wessex RNAGs",
+      "lineageTag": "534863eb-030e-4a45-b6a4-cd5b718416d0",
+      "text": [
+        "let",
+        "    Source = Table.NestedJoin(#\"reporting vw_WaterbodyRff\", {\"WATERBODY_ID\"}, WBs_Wessex, {\"ID\"}, \"WBs_Wessex\", JoinKind.Inner),",
+        "    #\"Expanded WBs_Wessex\" = Table.ExpandTableColumn(Source, \"WBs_Wessex\", {\"ID\", \"Name\", \"Version\", \"Category\", \"Region\", \"Area\", \"Area Team\", \"RBD\", \"Catchment\", \"OP Catchment\", \"Country\", \"Authority\", \"HMD\"}, {\"WBs_Wessex.ID\", \"WBs_Wessex.Name\", \"WBs_Wessex.Version\", \"WBs_Wessex.Category\", \"WBs_Wessex.Region\", \"WBs_Wessex.Area\", \"WBs_Wessex.Area Team\", \"WBs_Wessex.RBD\", \"WBs_Wessex.Catchment\", \"WBs_Wessex.OP Catchment\", \"WBs_Wessex.Country\", \"WBs_Wessex.Authority\", \"WBs_Wessex.HMD\"}),",
+        "    #\"Removed Columns\" = Table.RemoveColumns(#\"Expanded WBs_Wessex\",{\"WBs_Wessex.Version\", \"WBs_Wessex.Category\", \"WBs_Wessex.Country\", \"WBs_Wessex.RBD\", \"WBs_Wessex.Area Team\"}),",
+        "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Removed Columns\",{{\"CREATED_DATE\", type date}}),",
+        "    #\"Sorted Rows\" = Table.Buffer( ",
+        "Table.Sort(#\"Changed Type\",{{\"CREATED_DATE\", Order.Descending}})),",
+        "    #\"Removed Duplicates\" = Table.Distinct(#\"Sorted Rows\", {\"WATERBODY_ID\", \"RFF_TYPE\", \"CLASS_ITEM_NAME\", \"SWMI_NAME\", \"SWMI_CERTAINTY_NAME\", \"RFF_ACTION_NAME\", \"BUSINESS_CATEGORY_NAME\"})",
+        "in",
+        "    #\"Removed Duplicates\""
+      ],
+      "isDirectQuery": false,
+      "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\r\\n    Source = Table.NestedJoin(#\\\"reporting vw_WaterbodyRff\\\", {\\\"WATERBODY_ID\\\"}, WBs_Wessex, {\\\"ID\\\"}, \\\"WBs_Wessex\\\", JoinKind.Inner),\\r\\n    #\\\"Expanded WBs_Wessex\\\" = Table.ExpandTableColumn(Source, \\\"WBs_Wessex\\\", {\\\"ID\\\", \\\"Name\\\", \\\"Version\\\", \\\"Category\\\", \\\"Region\\\", \\\"Area\\\", \\\"Area Team\\\", \\\"RBD\\\", \\\"Catchment\\\", \\\"OP Catchment\\\", \\\"Country\\\", \\\"Authority\\\", \\\"HMD\\\"}, {\\\"WBs_Wessex.ID\\\", \\\"WBs_Wessex.Name\\\", \\\"WBs_Wessex.Version\\\", \\\"WBs_Wessex.Category\\\", \\\"WBs_Wessex.Region\\\", \\\"WBs_Wessex.Area\\\", \\\"WBs_Wessex.Area Team\\\", \\\"WBs_Wessex.RBD\\\", \\\"WBs_Wessex.Catchment\\\", \\\"WBs_Wessex.OP Catchment\\\", \\\"WBs_Wessex.Country\\\", \\\"WBs_Wessex.Authority\\\", \\\"WBs_Wessex.HMD\\\"}),\\r\\n    #\\\"Removed Columns\\\" = Table.RemoveColumns(#\\\"Expanded WBs_Wessex\\\",{\\\"WBs_Wessex.Version\\\", \\\"WBs_Wessex.Category\\\", \\\"WBs_Wessex.Country\\\", \\\"WBs_Wessex.RBD\\\", \\\"WBs_Wessex.Area Team\\\"}),\\r\\n    #\\\"Changed Type\\\" = Table.TransformColumnTypes(#\\\"Removed Columns\\\",{{\\\"CREATED_DATE\\\", type date}}),\\r\\n    #\\\"Sorted Rows\\\" = Table.Buffer( \\r\\nTable.Sort(#\\\"Changed Type\\\",{{\\\"CREATED_DATE\\\", Order.Descending}})),\\r\\n    #\\\"Removed Duplicates\\\" = Table.Distinct(#\\\"Sorted Rows\\\", {\\\"WATERBODY_ID\\\", \\\"RFF_TYPE\\\", \\\"CLASS_ITEM_NAME\\\", \\\"SWMI_NAME\\\", \\\"SWMI_CERTAINTY_NAME\\\", \\\"RFF_ACTION_NAME\\\", \\\"BUSINESS_CATEGORY_NAME\\\"})\\r\\nin\\r\\n    #\\\"Removed Duplicates\\\"\",\"ReferencedQueriesFormulaText\":{}}",
+      "loadAsTableDisabled": false,
+      "resultType": "Table",
+      "isHidden": false
+    },
+    {
+      "name": "Wessex RNAGs (2)",
+      "lineageTag": "21a56a77-bd84-4a09-aaf7-6aec6dd9e05f",
+      "text": [
+        "let",
+        "    Source = Table.NestedJoin(#\"reporting vw_WaterbodyRff\", {\"WATERBODY_ID\"}, WBs_Wessex, {\"ID\"}, \"WBs_Wessex\", JoinKind.Inner),",
+        "    #\"Expanded WBs_Wessex\" = Table.ExpandTableColumn(Source, \"WBs_Wessex\", {\"ID\", \"Name\", \"Version\", \"Category\", \"Region\", \"Area\", \"Area Team\", \"RBD\", \"Catchment\", \"OP Catchment\", \"Country\", \"Authority\", \"HMD\"}, {\"WBs_Wessex.ID\", \"WBs_Wessex.Name\", \"WBs_Wessex.Version\", \"WBs_Wessex.Category\", \"WBs_Wessex.Region\", \"WBs_Wessex.Area\", \"WBs_Wessex.Area Team\", \"WBs_Wessex.RBD\", \"WBs_Wessex.Catchment\", \"WBs_Wessex.OP Catchment\", \"WBs_Wessex.Country\", \"WBs_Wessex.Authority\", \"WBs_Wessex.HMD\"}),",
+        "    #\"Removed Columns\" = Table.RemoveColumns(#\"Expanded WBs_Wessex\",{\"WBs_Wessex.Version\", \"WBs_Wessex.Category\", \"WBs_Wessex.Country\", \"WBs_Wessex.RBD\", \"WBs_Wessex.Area Team\"}),",
+        "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Removed Columns\",{{\"CREATED_DATE\", type date}}),",
+        "    #\"Sorted Rows\" = Table.Buffer( ",
+        "Table.Sort(#\"Changed Type\",{{\"CREATED_DATE\", Order.Descending}})),",
+        "    #\"Removed Duplicates\" = Table.Distinct(#\"Sorted Rows\", {\"WATERBODY_ID\", \"RFF_TYPE\", \"CLASS_ITEM_NAME\", \"SWMI_NAME\", \"SWMI_CERTAINTY_NAME\", \"RFF_ACTION_NAME\", \"BUSINESS_CATEGORY_NAME\"})",
+        "in",
+        "    #\"Removed Duplicates\""
+      ],
+      "isDirectQuery": false,
+      "lastLoadedAsTableFormulaText": "{\"IncludesReferencedQueries\":false,\"RootFormulaText\":\"let\\r\\n    Source = Table.NestedJoin(#\\\"reporting vw_WaterbodyRff\\\", {\\\"WATERBODY_ID\\\"}, WBs_Wessex, {\\\"ID\\\"}, \\\"WBs_Wessex\\\", JoinKind.Inner),\\r\\n    #\\\"Expanded WBs_Wessex\\\" = Table.ExpandTableColumn(Source, \\\"WBs_Wessex\\\", {\\\"ID\\\", \\\"Name\\\", \\\"Version\\\", \\\"Category\\\", \\\"Region\\\", \\\"Area\\\", \\\"Area Team\\\", \\\"RBD\\\", \\\"Catchment\\\", \\\"OP Catchment\\\", \\\"Country\\\", \\\"Authority\\\", \\\"HMD\\\"}, {\\\"WBs_Wessex.ID\\\", \\\"WBs_Wessex.Name\\\", \\\"WBs_Wessex.Version\\\", \\\"WBs_Wessex.Category\\\", \\\"WBs_Wessex.Region\\\", \\\"WBs_Wessex.Area\\\", \\\"WBs_Wessex.Area Team\\\", \\\"WBs_Wessex.RBD\\\", \\\"WBs_Wessex.Catchment\\\", \\\"WBs_Wessex.OP Catchment\\\", \\\"WBs_Wessex.Country\\\", \\\"WBs_Wessex.Authority\\\", \\\"WBs_Wessex.HMD\\\"}),\\r\\n    #\\\"Removed Columns\\\" = Table.RemoveColumns(#\\\"Expanded WBs_Wessex\\\",{\\\"WBs_Wessex.Version\\\", \\\"WBs_Wessex.Category\\\", \\\"WBs_Wessex.Country\\\", \\\"WBs_Wessex.RBD\\\", \\\"WBs_Wessex.Area Team\\\"}),\\r\\n    #\\\"Changed Type\\\" = Table.TransformColumnTypes(#\\\"Removed Columns\\\",{{\\\"CREATED_DATE\\\", type date}}),\\r\\n    #\\\"Sorted Rows\\\" = Table.Buffer( \\r\\nTable.Sort(#\\\"Changed Type\\\",{{\\\"CREATED_DATE\\\", Order.Descending}})),\\r\\n    #\\\"Removed Duplicates\\\" = Table.Distinct(#\\\"Sorted Rows\\\", {\\\"WATERBODY_ID\\\", \\\"RFF_TYPE\\\", \\\"CLASS_ITEM_NAME\\\", \\\"SWMI_NAME\\\", \\\"SWMI_CERTAINTY_NAME\\\", \\\"RFF_ACTION_NAME\\\", \\\"BUSINESS_CATEGORY_NAME\\\"})\\r\\nin\\r\\n    #\\\"Removed Duplicates\\\"\",\"ReferencedQueriesFormulaText\":{}}",
+      "loadAsTableDisabled": false,
+      "resultType": "Table",
+      "isHidden": false
+    }
+  ],
+  "queryGroups": [],
+  "culture": "en-GB"
+}
