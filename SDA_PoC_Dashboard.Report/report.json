@@ -73,7 +73,7 @@
           "z": 13000.00
         },
         {
-          "config": "{\"name\":\"10610c4e2725d548df09\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":5000,\"width\":801.4285714285714,\"height\":65.71428571428572,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Compliance Water Quality Dashboard Prototype\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"28pt\"}}]}]}}]}}}",
+          "config": "{\"name\":\"10610c4e2725d548df09\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":5000,\"width\":801.4285714285714,\"height\":65.71428571428572,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Compliance Water Quality Dashboard PoC\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"28pt\"}}]}]}}]}}}",
           "filters": "[]",
           "height": 65.71,
           "width": 801.43,
@@ -118,12 +118,12 @@
           "z": 2000.00
         },
         {
-          "config": "{\"name\":\"56df868ded87cc3dc96a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1081.6666666666667,\"y\":0,\"z\":17000,\"width\":121.66666666666667,\"height\":108.33333333333334,\"tabOrder\":15000}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"EA_logo2924787852206956.png\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "config": "{\"name\":\"56df868ded87cc3dc96a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1081.6445287792537,\"y\":19.430740037950663,\"z\":17000,\"width\":121.44212523719166,\"height\":108.48829854522455,\"tabOrder\":15000}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"EA_logo2924787852206956.png\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
           "filters": "[]",
-          "height": 108.33,
-          "width": 121.67,
-          "x": 1081.67,
-          "y": 0.00,
+          "height": 108.49,
+          "width": 121.44,
+          "x": 1081.64,
+          "y": 19.43,
           "z": 17000.00
         },
         {
@@ -163,7 +163,7 @@
           "z": 7000.00
         },
         {
-          "config": "{\"name\":\"9d3cc6c4d51571336863\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1023.3333333333334,\"y\":268.33333333333337,\"z\":11000,\"width\":246.66666666666669,\"height\":231.66666666666669,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"WIMS_SDA_Export.code\",\"active\":true},{\"queryRef\":\"WIMS_SDA_Export.sample.sampledMaterialType.label\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"w\",\"Entity\":\"WIMS_SDA_Export\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"w\"}},\"Property\":\"code\"},\"Name\":\"WIMS_SDA_Export.code\",\"NativeReferenceName\":\"code\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"w\"}},\"Property\":\"sample.sampledMaterialType.label\"},\"Name\":\"WIMS_SDA_Export.sample.sampledMaterialType.label\",\"NativeReferenceName\":\"sample.sampledMaterialType.label\"}]},\"expansionStates\":[{\"roles\":[\"Values\"],\"levels\":[{\"queryRefs\":[\"WIMS_SDA_Export.code\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"WIMS_SDA_Export\"}},\"Property\":\"code\"}}],\"isPinned\":true},{\"queryRefs\":[\"WIMS_SDA_Export.sample.sampledMaterialType.label\"],\"isCollapsed\":true,\"isPinned\":true}],\"root\":{\"identityValues\":null}}],\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{}}],\"items\":[{\"properties\":{\"padding\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'EA Responsible Area'\"}}}}}]}}}",
+          "config": "{\"name\":\"9d3cc6c4d51571336863\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1023.3333333333334,\"y\":268.33333333333337,\"z\":11000,\"width\":246.66666666666669,\"height\":231.66666666666669,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"WIMS_SDA_Export.code\",\"active\":true},{\"queryRef\":\"WIMS_SDA_Export.sample.sampledMaterialType.label\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"w\",\"Entity\":\"WIMS_SDA_Export\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"w\"}},\"Property\":\"code\"},\"Name\":\"WIMS_SDA_Export.code\",\"NativeReferenceName\":\"code\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"w\"}},\"Property\":\"sample.sampledMaterialType.label\"},\"Name\":\"WIMS_SDA_Export.sample.sampledMaterialType.label\",\"NativeReferenceName\":\"sample.sampledMaterialType.label\"}]},\"expansionStates\":[{\"roles\":[\"Values\"],\"levels\":[{\"queryRefs\":[\"WIMS_SDA_Export.code\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"WIMS_SDA_Export\"}},\"Property\":\"code\"}}],\"isPinned\":true},{\"queryRefs\":[\"WIMS_SDA_Export.sample.sampledMaterialType.label\"],\"isCollapsed\":true,\"isPinned\":true}],\"root\":{\"identityValues\":null}}],\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"w\",\"Entity\":\"WIMS_SDA_Export\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"w\"}},\"Property\":\"code\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'CLA'\"}}]]}}}]}}}}],\"items\":[{\"properties\":{\"padding\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'EA Responsible Area'\"}}}}}]},\"cachedFilterDisplayItems\":[{\"id\":{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"WIMS_SDA_Export\"}},\"Property\":\"code\"}},\"Right\":{\"Literal\":{\"Value\":\"'CLA'\"}}}}},\"displayName\":\"CLA\"}]}}",
           "filters": "[]",
           "height": 231.67,
           "width": 246.67,
