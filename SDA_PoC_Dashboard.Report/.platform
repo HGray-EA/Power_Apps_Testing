@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "SDA_PoC_Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4af51eab-2282-4bd7-8bdf-aa1788fb4ad7"
+  }
+}

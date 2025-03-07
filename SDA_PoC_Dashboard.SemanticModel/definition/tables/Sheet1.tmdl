@@ -1,0 +1,48 @@
+table Sheet1
+	lineageTag: ae51b7c7-7390-4628-8903-9116aa18df52
+
+	column Comment
+		dataType: string
+		lineageTag: c6fbce05-6bd3-4060-b063-eb59f78774cf
+		summarizeBy: none
+		sourceColumn: Comment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Commentator
+		dataType: string
+		lineageTag: da9b7fb9-33eb-4f74-9ab8-90851d83db91
+		summarizeBy: none
+		sourceColumn: Commentator
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date_of_Comment
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1a09e422-7fd6-4831-807f-fcf010c4722f
+		summarizeBy: none
+		sourceColumn: Date_of_Comment
+
+		variation Variation
+			isDefault
+			relationship: 34ec9700-fdca-4f79-a28f-502b02e60529
+			defaultHierarchy: LocalDateTable_b9e51770-2ce9-4c13-8a4b-6fc2a9706791.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition Sheet1 = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\hg000051\Downloads\Comment_table.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Comment", type text}, {"Commentator", type text}, {"Date_of_Comment", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

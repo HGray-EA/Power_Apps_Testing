@@ -1,0 +1,48 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 284,
+            "y": 328
+          },
+          "nodeIndex": "Sheet1",
+          "nodeLineageTag": "ae51b7c7-7390-4628-8903-9116aa18df52",
+          "size": {
+            "height": 145,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 284,
+            "y": 17
+          },
+          "nodeIndex": "WIMS_SDA_Export",
+          "nodeLineageTag": "8ab088e3-3bd3-496f-a49c-d39111f80043",
+          "size": {
+            "height": 283,
+            "width": 145
+          },
+          "zIndex": 1
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 96.073903002309464,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

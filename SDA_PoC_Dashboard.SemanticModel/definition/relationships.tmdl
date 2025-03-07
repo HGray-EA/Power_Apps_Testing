@@ -1,0 +1,20 @@
+relationship 34ec9700-fdca-4f79-a28f-502b02e60529
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Sheet1.Date_of_Comment
+	toColumn: LocalDateTable_b9e51770-2ce9-4c13-8a4b-6fc2a9706791.Date
+
+relationship 2826fb5e-e4d5-4b23-bec8-f29c1d3ca286
+	joinOnDateBehavior: datePartOnly
+	fromColumn: WIMS_SDA_Export.'sample.sampleDateTime'
+	toColumn: LocalDateTable_8a64cda1-f447-4bce-b6ce-2c06e5a9e65f.Date
+
+relationship fa460521-9a65-4693-8586-827f8ff3ec1d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: WIMS_SDA_Export.Datetime
+	toColumn: LocalDateTable_7582c6c6-07b0-4395-8224-55f104f73eed.Date
+
+relationship a72fb291-77dd-43db-ba64-927759d395b0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: WIMS_SDA_Export.date_from
+	toColumn: LocalDateTable_c1a7c3bd-065c-4b94-bbbf-4be5779d4ea7.Date
+

@@ -1,0 +1,357 @@
+table WIMS_SDA_Export
+	lineageTag: 8ab088e3-3bd3-496f-a49c-d39111f80043
+
+	measure 'Compliance Limit Measure' =
+			
+			VAR SelectedValue = SELECTEDVALUE('WIMS_SDA_Export'[determinand.definition])
+			RETURN LOOKUPVALUE('WIMS_SDA_Export'[Threshold], 'WIMS_SDA_Export'[determinand.definition], SelectedValue)
+		formatString: 0
+		lineageTag: 2f470ba5-ab95-48d8-8161-d755442f144e
+
+	measure 'Breach Count' = ```
+			
+			COUNTROWS(FILTER('WIMS_SDA_Export', 'WIMS_SDA_Export'[Threshold_Breach] = "1"))
+			
+			```
+		formatString: 0
+		lineageTag: 85b8dc16-3c0d-454f-ba97-6d73505c208a
+
+	measure 'NonBreach Count' = ```
+			
+			COUNTROWS(FILTER('WIMS_SDA_Export', 'WIMS_SDA_Export'[Threshold_Breach] = "NA"))
+			
+			```
+		formatString: 0
+		lineageTag: 4943b371-1976-44b7-9a50-596529279583
+
+	column Column1
+		dataType: int64
+		formatString: 0
+		lineageTag: 6b56ddbf-f510-4f48-89af-641e15b1c629
+		summarizeBy: sum
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column X
+		dataType: int64
+		formatString: 0
+		lineageTag: 4d4b67e6-d6bd-400a-9909-6dc51b22b0b9
+		summarizeBy: sum
+		sourceColumn: X
+
+		annotation SummarizationSetBy = Automatic
+
+	column result
+		dataType: double
+		formatString: 0
+		lineageTag: 052bac01-5425-49d0-a0d7-5c8097e5d33f
+		summarizeBy: none
+		sourceColumn: result
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'determinand.definition'
+		dataType: string
+		lineageTag: ea31fb17-1066-426f-a433-63305f431051
+		summarizeBy: none
+		sourceColumn: determinand.definition
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'determinand.label'
+		dataType: string
+		lineageTag: 7e6176c6-0498-45f6-a8fb-576abb0b3f98
+		summarizeBy: none
+		sourceColumn: determinand.label
+
+		annotation SummarizationSetBy = Automatic
+
+	column Deter
+		dataType: int64
+		formatString: 0
+		lineageTag: 527fbee8-89bf-46e9-b8ba-228a44d0ade3
+		summarizeBy: sum
+		sourceColumn: Deter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'determinand.unit.label'
+		dataType: string
+		lineageTag: 9509ad05-ec28-4322-965b-35f8077ca6fe
+		summarizeBy: none
+		sourceColumn: determinand.unit.label
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'sample.isComplianceSample'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 7e7b949b-8fca-4d0f-a008-621964e04cc5
+		summarizeBy: none
+		sourceColumn: sample.isComplianceSample
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'sample.sampleDateTime'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0afcb336-de5d-481f-a728-699aa4eb0db3
+		summarizeBy: none
+		sourceColumn: sample.sampleDateTime
+
+		variation Variation
+			isDefault
+			relationship: 2826fb5e-e4d5-4b23-bec8-f29c1d3ca286
+			defaultHierarchy: LocalDateTable_8a64cda1-f447-4bce-b6ce-2c06e5a9e65f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'sample.purpose.label'
+		dataType: string
+		lineageTag: 5e494f90-4699-4c97-8c0b-fcfa6ca65d66
+		summarizeBy: none
+		sourceColumn: sample.purpose.label
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'sample.sampledMaterialType.label'
+		dataType: string
+		lineageTag: 50cb3e63-ff8e-4df8-a886-a5bc4b841c9d
+		summarizeBy: none
+		sourceColumn: sample.sampledMaterialType.label
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'sample.samplingPoint..id'
+		dataType: string
+		lineageTag: 56a0e7c3-89a3-4004-848e-e34daacff047
+		summarizeBy: none
+		sourceColumn: sample.samplingPoint..id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'sample.samplingPoint.label'
+		dataType: string
+		lineageTag: 57d538f1-9259-4d35-b861-b615c06c609b
+		summarizeBy: none
+		sourceColumn: sample.samplingPoint.label
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'sample.samplingPoint.notation'
+		dataType: string
+		lineageTag: 8d988b92-515b-4a92-8292-ea2c1b33a604
+		summarizeBy: none
+		sourceColumn: sample.samplingPoint.notation
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'resultQualifier.notation'
+		dataType: string
+		lineageTag: 5351a09e-b711-4fe8-a16e-e66d6134b33f
+		summarizeBy: none
+		sourceColumn: resultQualifier.notation
+
+		annotation SummarizationSetBy = Automatic
+
+	column Datetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 029a765c-171a-47eb-a586-458a3cc97717
+		summarizeBy: none
+		sourceColumn: Datetime
+
+		variation Variation
+			isDefault
+			relationship: fa460521-9a65-4693-8586-827f8ff3ec1d
+			defaultHierarchy: LocalDateTable_7582c6c6-07b0-4395-8224-55f104f73eed.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Threshold
+		dataType: int64
+		formatString: 0
+		lineageTag: 135716c7-bb17-41ba-b199-6b5e98d794a3
+		dataCategory: Barcode
+		summarizeBy: none
+		sourceColumn: Threshold
+
+		annotation SummarizationSetBy = User
+
+	column Threshold_Breach
+		dataType: string
+		lineageTag: 4882bcdb-77d1-4dde-8729-8016b673950c
+		summarizeBy: none
+		sourceColumn: Threshold_Breach
+
+		annotation SummarizationSetBy = Automatic
+
+	column Comment
+		dataType: string
+		lineageTag: e1869e7a-3099-432c-8aec-f3f42966a504
+		summarizeBy: none
+		sourceColumn: Comment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Commenter
+		dataType: string
+		lineageTag: 751b7cc7-a515-4173-9916-d4644cbd3357
+		summarizeBy: none
+		sourceColumn: Commenter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Comment.Date'
+		dataType: string
+		lineageTag: ef5cec36-ea00-42ba-999a-71aeb9993310
+		summarizeBy: none
+		sourceColumn: Comment.Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column identifier
+		dataType: int64
+		formatString: 0
+		lineageTag: 7035fd10-bf60-48db-9169-7e1ec9050f9b
+		summarizeBy: sum
+		sourceColumn: identifier
+
+		annotation SummarizationSetBy = Automatic
+
+	column long_name
+		dataType: string
+		lineageTag: 80ac241b-34de-4d10-a1ef-416a924b1e32
+		summarizeBy: none
+		sourceColumn: long_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column short_name
+		dataType: string
+		lineageTag: 48cda7c4-bf9e-4df2-8c52-bd24149b471e
+		summarizeBy: none
+		sourceColumn: short_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column code
+		dataType: string
+		lineageTag: a04660b2-ad01-4a44-a698-5b707135baf5
+		summarizeBy: none
+		sourceColumn: code
+
+		annotation SummarizationSetBy = Automatic
+
+	column descriptio
+		dataType: string
+		lineageTag: 85d2969b-a72c-4505-908b-b44bf4281bd1
+		summarizeBy: none
+		sourceColumn: descriptio
+
+		annotation SummarizationSetBy = Automatic
+
+	column seaward
+		dataType: string
+		lineageTag: 42cafec8-9310-442e-abe8-85139caaf800
+		summarizeBy: none
+		sourceColumn: seaward
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_from
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 423bb5b6-2882-48a9-a1c4-8cf8f93787a4
+		summarizeBy: none
+		sourceColumn: date_from
+
+		variation Variation
+			isDefault
+			relationship: a72fb291-77dd-43db-ba64-927759d395b0
+			defaultHierarchy: LocalDateTable_c1a7c3bd-065c-4b94-bbbf-4be5779d4ea7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column date_to
+		dataType: string
+		lineageTag: 287960c0-69df-455c-a532-69fd0ab37a12
+		summarizeBy: none
+		sourceColumn: date_to
+
+		annotation SummarizationSetBy = Automatic
+
+	column shape_leng
+		dataType: double
+		lineageTag: e67ae1e8-98f1-4c1a-a66d-4a1cc6ea255c
+		summarizeBy: sum
+		sourceColumn: shape_leng
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column st_area_sh
+		dataType: double
+		lineageTag: 4a13d478-c337-411e-962b-158fc4adde78
+		summarizeBy: sum
+		sourceColumn: st_area_sh
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column st_perimet
+		dataType: double
+		lineageTag: 71031fb7-6f86-4064-893a-db148661b77a
+		summarizeBy: sum
+		sourceColumn: st_perimet
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'lubridate::month(sample.sampleDateTime)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 35658ebc-2028-4b06-a026-869accb34a3c
+		summarizeBy: sum
+		sourceColumn: lubridate::month(sample.sampleDateTime)
+
+		annotation SummarizationSetBy = Automatic
+
+	column Monthly_breach_tot_area
+		dataType: int64
+		formatString: 0
+		lineageTag: 29340dc7-de47-4afa-a241-6f0c9eaf0159
+		summarizeBy: sum
+		sourceColumn: Monthly_breach_tot_area
+
+		annotation SummarizationSetBy = Automatic
+
+	column Monthly_breach_tot_location
+		dataType: int64
+		formatString: 0
+		lineageTag: 4a1fc35a-c5e0-4ee6-983c-79331e8d851b
+		summarizeBy: sum
+		sourceColumn: Monthly_breach_tot_location
+
+		annotation SummarizationSetBy = Automatic
+
+	partition WIMS_SDA_Export = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\hg000051\Downloads\WIMS_SDA_Export.csv"),[Delimiter=",", Columns=35, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"", Int64.Type}, {"X", Int64.Type}, {"result", type number}, {"determinand.definition", type text}, {"determinand.label", type text}, {"Deter", Int64.Type}, {"determinand.unit.label", type text}, {"sample.isComplianceSample", type logical}, {"sample.sampleDateTime", type datetime}, {"sample.purpose.label", type text}, {"sample.sampledMaterialType.label", type text}, {"sample.samplingPoint..id", type text}, {"sample.samplingPoint.label", type text}, {"sample.samplingPoint.notation", type text}, {"resultQualifier.notation", type text}, {"Datetime", type datetime}, {"Threshold", Int64.Type}, {"Threshold_Breach", type text}, {"Comment", type text}, {"Commenter", type text}, {"Comment.Date", type text}, {"identifier", Int64.Type}, {"long_name", type text}, {"short_name", type text}, {"code", type text}, {"descriptio", type text}, {"seaward", type text}, {"date_from", type date}, {"date_to", type text}, {"shape_leng", type number}, {"st_area_sh", type number}, {"st_perimet", type number}, {"lubridate::month(sample.sampleDateTime)", Int64.Type}, {"Monthly_breach_tot_area", Int64.Type}, {"Monthly_breach_tot_location", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
